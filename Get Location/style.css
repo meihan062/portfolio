@@ -1,0 +1,14 @@
+meter {
+    width: 200px;
+    height: 20px;
+}
+
+progress {
+    width: 200px;
+    height: 20px;
+}
+
+#myRange {
+    width: 200px;
+    height: 20px;
+}

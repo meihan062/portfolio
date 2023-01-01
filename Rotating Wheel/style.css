@@ -1,0 +1,56 @@
+#car {
+    position: fixed;
+    width: 200px;
+    height: 100px;
+    background-color: green;
+    left: 20px;
+    top: 20px;
+}
+.wheel {
+    width: 50px;
+}
+#leftWheel {
+    position: relative;
+    left: 30px;
+    top: 80px;
+}
+#rightWheel {
+    position: relative;
+    left: 80px;
+    top: 80px;
+}
+
+/* 利用css旋轉輪胎 */
+.wheel {
+    /* 方法1. */
+    /* 名稱, 時間, 畫面流暢, 不要淡入淡出 */
+    animation: rotating 1s linear infinite;
+
+    /* 方法2. */
+    /* 名稱 */
+    /* animation-name: rotating;
+    /* 時間 */
+    /* animation-duration: 1s; */
+    /* 不要淡入淡出 */
+    /* animation-iteration-count: infinite; */
+    /* 畫面流暢 */
+    /* animation-timing-function: linear; */ 
+}
+@keyframes rotating {
+    /* from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);} */
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg) scale(3,2);
+        /* transform: scale(2,2); */
+    }
+    50% {
+        transform: rotate(270deg) scale(1,2);
+        /* transform: scale(1,1); */
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
