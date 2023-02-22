@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>袈裟壓制(HON-KESA-GATAME)</title>
+
+    <style>
+        .fit {
+            width: 700px;
+        }
+
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 15px;
+        }
+
+        .header-sticky {
+            -webkit-transform: translate(0, 0);
+            -moz-transform: translate(0, 0);
+            transform: translate(0, 0);
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            transition-delay: 0s;
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+        }
+
+        .container-fluid {
+            max-width: 1600px;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar>.container,
+        .navbar>.container-fluid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-inv .navbar-nav>.disabled>a,
+        .navbar-inv .navbar-nav>.disabled>a:focus,
+        .navbar-inv .navbar-nav>.disabled>a:hover {
+            color: #444;
+            background-color: transparent
+        }
+
+        .navbar-inv .navbar-nav>.open>a,
+        .navbar-inv .navbar-nav>.open>a:focus,
+        .navbar-inv .navbar-nav>.open>a:hover {
+            color: #fff;
+            background-color: #080808
+        }
+
+        .navbar-inv .navbar-toggle {
+            border-color: #333
+        }
+
+        .navbar-inv .navbar-toggle:focus,
+        .navbar-inv .navbar-toggle:hover {
+            background-color: #333
+        }
+
+        .navbar-inv .navbar-toggle .icon-bar {
+            background-color: #fff
+        }
+
+        .navbar-inv .navbar-collapse,
+        .navbar-inv .navbar-form {
+            border-color: #101010
+        }
+
+        .navbar-inv .navbar-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .navbar-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .btn-link:focus,
+        .navbar-inv .btn-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link[disabled]:focus,
+        .navbar-inv .btn-link[disabled]:hover,
+        fieldset[disabled] .navbar-inverse .btn-link:focus,
+        fieldset[disabled] .navbar-inverse .btn-link:hover {
+            color: #444
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .navbar-expand-lg>.container,
+            .navbar-expand-lg>.container-fluid {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.dropdown-header {
+                border-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu .divider {
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a {
+                color: #9d9d9d
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:hover {
+                color: #fff;
+                background-color: transparent
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:hover {
+                color: #fff;
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:hover {
+                color: #444;
+                background-color: transparent
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+
+            .navbar-expand-lg {
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+            }
+
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+            }
+
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                position: absolute;
+            }
+
+            .navbar-expand-lg .navbar-nav .nav-link {
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+            }
+
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+            }
+
+            .navbar-expand-lg .navbar-toggler {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body style="position: relative; background-color: rgba(71, 78, 93, 0.45);">
+
+    <!-- nav-bar -->
+    <header class="header header-sticky">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-inv" style="background-color: darkslategrey; opacity: 0.85;">
+                    <div class="navbar-header">
+                        <!-- 隱藏選單按鈕 -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="color: darkgray;">Judo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="../1_index.html" style="color: darkgray;">首頁</a></li>
+                            <li><a href="../history.html" style="color: darkgray;">歷史及段位</a></li>
+                            <li><a href="../manner.html" style="color: darkgray;">精神與禮儀</a></li>
+                            <li><a href="../skill.html" style="color: darkgray;">柔道的技術</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                    style="color: darkgray;">動作介紹<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="action_SEOI-NAGEL.html">摔倒法(Standing Techniques)</a></li>
+                                    <li><a href="action_HON-KESA-GATAME.html">壓制法(Holding Techniques)</a></li>
+                                    <li><a href="action_HADAKA-JIME.html">勒頸法(Strangling Techniques)</a></li>
+                                    <li><a href="action_UDE-HISHIGI-JUJI-GATAME.html">關節法(Joint Techniques)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="../address.html" style="color: darkgray;">全台柔道館地址</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="position: relative;">
+        <div class="container-fluid">
+            <div class="row flex-center">
+                <div class="col-12 mb-2 mb-lg-5 text-center">
+                    <h2 class="fs-3 fs-sm-4"><span class="text-decoration-underline">袈裟壓制(HON-KESA-GATAME)</span></h2>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 一 -->
+    <section class="module" style="padding: 0 20px 0 20px">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div class="icon-box">
+                        <div class="icon-box-icon"><span class="ti-layout"></span></div>
+                        <div class="icon-box-title">
+                            <h4>一、介紹</h4>
+                        </div>
+                        <div class="icon-box-content">
+                            <p>為柔道初學者最先練習的技術，同時也是最普遍的一種壓制法，選手使用率最高。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 二 -->
+    <section class="module" style="padding: 0 20px 0 20px">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div class="icon-box">
+                        <div class="icon-box-icon"><span class="ti-layout"></span></div>
+                        <div class="icon-box-title">
+                            <h4>二、動作分解</h4>
+                        </div>
+                        <div class="icon-box-content">
+                            <p>1.對方仰躺於疊蓆上，從右側密接對方上身跪下，抓住對方的右手夾緊左腋下，左手抓緊對方右衣袖，右手臂勾住對方頸部，右手抓住對方後衣領或放置於疊蓆上。</p>
+                            <p>2.右腳微彎靠近對方右腋下，左腳向後彎曲，左膝內側著地，上半身向前傾斜，頭下俯接近對方面頰，雙方胸部密接，以上身壓住對方。</p>
+                            <img src="https://jibaofiles.s3.amazonaws.com/58452c126be0a04e3c72f163.jpg" class="fit"
+                                alt="Cinque Terre" style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 換頁按鈕 -->
+    <ul class="pager">
+        <li><a href="#" style="background-color: darkslategrey; opacity: 0.75; color: darkgray;">上一頁</a></li>
+        <li><a href="action_KAMI-SHIHO-GATAME.html"
+                style="background-color: darkslategrey; opacity: 0.75; color: darkgray;">下一頁</a></li>
+    </ul>
+
+    <br>
+
+    <!-- footer -->
+    <div style="position: relative; padding: 0 20px 0 20px;">
+        <hr style="width: 95%; position: absolute; bottom: 10px;">
+        <footer style="color: black; text-align: left; position: absolute; left: 33px; bottom: 5px;">&copy; meihan 2022
+        </footer>
+    </div>
+
+</body>
+</html>

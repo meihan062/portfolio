@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>manner</title>
+
+    <style>
+        img {
+            width: 500px;
+            height: 700px;
+        }
+
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 15px;
+        }
+
+        .header-sticky {
+            -webkit-transform: translate(0, 0);
+            -moz-transform: translate(0, 0);
+            transform: translate(0, 0);
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            transition-delay: 0s;
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+        }
+
+        .container-fluid {
+            max-width: 1600px;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar>.container,
+        .navbar>.container-fluid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-inv .navbar-nav>.disabled>a,
+        .navbar-inv .navbar-nav>.disabled>a:focus,
+        .navbar-inv .navbar-nav>.disabled>a:hover {
+            color: #444;
+            background-color: transparent
+        }
+
+        .navbar-inv .navbar-nav>.open>a,
+        .navbar-inv .navbar-nav>.open>a:focus,
+        .navbar-inv .navbar-nav>.open>a:hover {
+            color: #fff;
+            background-color: #080808
+        }
+
+        .navbar-inv .navbar-toggle {
+            border-color: #333
+        }
+
+        .navbar-inv .navbar-toggle:focus,
+        .navbar-inv .navbar-toggle:hover {
+            background-color: #333
+        }
+
+        .navbar-inv .navbar-toggle .icon-bar {
+            background-color: #fff
+        }
+
+        .navbar-inv .navbar-collapse,
+        .navbar-inv .navbar-form {
+            border-color: #101010
+        }
+
+        .navbar-inv .navbar-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .navbar-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .btn-link:focus,
+        .navbar-inv .btn-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link[disabled]:focus,
+        .navbar-inv .btn-link[disabled]:hover,
+        fieldset[disabled] .navbar-inverse .btn-link:focus,
+        fieldset[disabled] .navbar-inverse .btn-link:hover {
+            color: #444
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .navbar-expand-lg>.container,
+            .navbar-expand-lg>.container-fluid {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.dropdown-header {
+                border-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu .divider {
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a {
+                color: #9d9d9d
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:hover {
+                color: #fff;
+                background-color: transparent
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:hover {
+                color: #fff;
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:hover {
+                color: #444;
+                background-color: transparent
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            .navbar-expand-lg {
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+            }
+
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+            }
+
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                position: absolute;
+            }
+
+            .navbar-expand-lg .navbar-nav .nav-link {
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+            }
+
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+            }
+
+            .navbar-expand-lg .navbar-toggler {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body style="position: relative; background-color: rgba(71, 78, 93, 0.45);">
+
+    <!-- nav-bar -->
+    <header class="header header-sticky">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-inv" style="background-color: darkslategrey; opacity: 0.85;">
+                    <div class="navbar-header">
+                        <!-- 隱藏選單按鈕 -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="color: darkgray;">Judo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="1_index.html" style="color: darkgray;">首頁</a></li>
+                            <li><a href="history.html" style="color: darkgray;">歷史及段位</a></li>
+                            <li><a href="#" style="color: darkgray;">精神與禮儀</a></li>
+                            <li><a href="skill.html" style="color: darkgray;">柔道的技術</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                    style="color: darkgray;">動作介紹<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./action/action_SEOI-NAGEL.html">摔倒法(Standing Techniques)</a></li>
+                                    <li><a href="./action/action_HON-KESA-GATAME.html">壓制法(Holding Techniques)</a></li>
+                                    <li><a href="./action/action_HADAKA-JIME.html">勒頸法(Strangling Techniques)</a></li>
+                                    <li><a href="./action/action_UDE-HISHIGI-JUJI-GATAME.html">關節法(Joint Techniques)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="address.html" style="color: darkgray;">全台柔道館地址</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <!-- 精神 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="position: relative; padding: 0 20px 0 20px">
+        <div class="container-fluid">
+            <div class="row flex-center">
+                <div class="col-12 mb-2 mb-lg-5 text-center">
+                    <h2 class="fs-3 fs-sm-4"><span class="text-decoration-underline">柔道的精神</span></h2>
+                    <p class="text-500 fst-italic">敬禮在柔道訓練和比賽中，佔有很重要的角色，不管是踏進道館前或比賽上場前後都須敬禮，《始於禮，終於禮》是柔道名言。
+                        <br>
+                        柔道以「精力善用，自他共榮」為基礎精神，並以鍛練及教育身心為目的，而非單純以競技勝負為目標，
+                        <br>
+                        正如嘉納治五郎於講道館的遺訓：「柔道是最有效使用身心之道。其修行是以攻擊防禦的練習來鍛鍊休養身體精神，並體會該運動的精髓。
+                        <br>
+                        如此來完成大我並對世界有所補益，乃柔道修行的最終目的。」
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 禮儀 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs">
+        <div class="container-fluid">
+            <div class="row flex-center">
+                <div class="col-12 mb-2 mb-lg-5 text-center">
+                    <h2 class="fs-3 fs-sm-4"><span class="text-decoration-underline">柔道的禮儀</span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <!-- 立姿禮 -->
+    <section class="pt-7 pt-md-9" style="padding: 0 20px 0 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <!-- Text -->
+                    <h3 style="text-decoration-line: overline;
+                        text-decoration-style: solid ;
+                        text-decoration-color:darkcyan;
+                        text-decoration-thickness:1px; ">
+                        立姿禮
+                    </h3>
+                </div>
+                <div class="col-md-4">
+                    <!-- Media -->
+                    <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+                        <!-- Border -->
+                        <div class="media-decoration-border" data-jarallax-element="-40"></div>
+                        <!-- Image -->
+                        <img class="media-decoration-img img-fluid" src="./image/tachilei1.jpg" alt="..."
+                            style="object-fit: contain;">
+                        <img class="media-decoration-img img-fluid" src="./image/tachilei2.jpg" alt="..."
+                            style="object-fit: contain;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <!-- Step 1. -->
+                    <h2 class="mb-2">
+                        <em>Step 1.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        身體成自然站立姿勢，兩腳腳跟相對並立，膝關節伸直，兩眼注視對方。
+                    </p>
+
+                    <!-- Step 2. -->
+                    <h2 class="mb-2">
+                        <em>Step 2.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        將上體前屈約30°，兩臂下垂，兩手手指，放在膝關節上方的大腿處，靜止稍許，然後自然抬起上體，恢復到原來姿勢。速度約在一次呼吸之間（約4秒鐘左右）。
+                    </p>
+
+                    <!-- Attention -->
+                    <h2>
+                        <em style="color: firebrick;">注意要點：</em>
+                    </h2>
+                    <!-- Text -->
+                    <p style="background-color: lightcoral; width: fit-content;">
+                        1.背部要直，收下頷，頭要正，雙手手指併攏伸直，輕輕地貼在軀幹兩側，恭敬地行禮。
+                    </p>
+                    <p style="background-color: lightcoral; width: fit-content;">
+                        2.注意防止駝背，頭不正或過於低頭，兩腳部要分開或兩膝彎曲。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <!-- 坐姿禮 -->
+    <section class="pt-7 pt-md-9" style="padding: 0 20px 0 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <!-- Text -->
+                    <h3 style="text-decoration-line: overline;
+                    text-decoration-style: solid ;
+                    text-decoration-color:darkcyan;
+                    text-decoration-thickness:1px;">
+                        坐姿禮:
+                    </h3>
+                    <h5>
+                        （也稱跪姿禮）
+                    </h5>
+                </div>
+                <div class="col-md-4">
+                    <!-- Media -->
+                    <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+                        <!-- Border -->
+                        <div class="media-decoration-border" data-jarallax-element="-40"></div>
+                        <!-- Image -->
+                        <img class="media-decoration-img img-fluid" src="./image/suwalei1.jpg" alt="坐姿禮"
+                            style="object-fit: contain;">
+                        <img class="media-decoration-img img-fluid" src="./image/suwalei2.jpg" alt="坐姿禮"
+                            style="object-fit: contain;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <!-- Step 1. -->
+                    <h2 class="mb-2">
+                        <em>Step 1.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        從站立姿勢開始，左腳向後撤約一步半。
+                    </p>
+
+                    <!-- Step 2. -->
+                    <h2 class="mb-2">
+                        <em>Step 2.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        將左膝跪在原來左腳尖的位置。
+                    </p>
+
+                    <!-- Step 3. -->
+                    <h2 class="mb-2">
+                        <em>Step 3.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        接著撤右腳雙膝並排跪下，兩腳腳尖著地。
+                    </p>
+
+                    <!-- Step 4. -->
+                    <h2 class="mb-2">
+                        <em>Step 4.</em>
+                    </h2>
+                    <p class="mb-0">
+                        把兩腳的大拇指重疊，右腳拇指壓在左腳拇指上，挺胸後坐成跪坐姿勢。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <!-- 正坐 -->
+    <section class="pt-7 pt-md-9" style="padding: 0 20px 0 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <!-- Text -->
+                    <h3 style="text-decoration-line: overline;
+                    text-decoration-style: solid ;
+                    text-decoration-color:darkcyan;
+                    text-decoration-thickness:1px;">
+                        正坐：
+                    </h3>
+                </div>
+                <div class="col-md-4">
+                    <!-- Media -->
+                    <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+                        <!-- Border -->
+                        <div class="media-decoration-border" data-jarallax-element="-40"></div>
+                        <!-- Image -->
+                        <img class="media-decoration-img img-fluid" src="./image/suwalei3.jpg" alt="坐姿禮"
+                            style="object-fit: contain;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <!-- Step 1. -->
+                    <h2 class="mb-2">
+                        <em>Step 1.</em>
+                    </h2>
+                    <p class="mb-0">
+                        輕輕地將兩手手指併攏，放在兩大腿的內側（腹股溝處）。
+                    </p>
+
+                    <!-- Step 2. -->
+                    <h2 class="mb-2">
+                        <em>Step 2.</em>
+                    </h2>
+                    <p class="mb-0">
+                        兩膝之間的距離為兩拳寬。
+                    </p>
+
+                    <!-- Step 3. -->
+                    <h2 class="mb-2">
+                        <em>Step 3.</em>
+                    </h2>
+                    <p class="mb-0">
+                        兩腳的疊法是右拇指壓在左拇指上。
+                    </p>
+
+                    <!-- Step 4. -->
+                    <h2 class="mb-2">
+                        <em>Step 4.</em>
+                    </h2>
+                    <p class="mb-0">
+                        脊背要伸直，下頷收緊，輕輕地閉上嘴，目光在水平線上。
+                    </p>
+
+                    <!-- Step 5. -->
+                    <h2 class="mb-2">
+                        <em>Step 5.</em>
+                    </h2>
+                    <p class="mb-0">
+                        不要把全腳重疊，不要駝背。側著身體，垂肩或抬下頷。
+                        <br>
+                        行禮：從正坐姿勢開始，把兩手放在膝前，手指併攏整齊，兩手拇指、食指相對，距離約6公分，自然地放在墊子上。
+                        <br>
+                        將頭輕輕地低到離兩手約30公分左右的距離處，行禮。禮後起身成正坐姿勢。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <!-- 正坐到站立 -->
+    <section class="pt-7 pt-md-9" style="padding: 0 20px 0 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <!-- Text -->
+                    <h3 style="text-decoration-line: overline;
+                    text-decoration-style: solid ;
+                    text-decoration-color:darkcyan;
+                    text-decoration-thickness:1px;">
+                        從正坐姿勢到站立姿勢：
+                    </h3>
+                </div>
+                <div class="col-md-4">
+                    <!-- Media -->
+                    <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+                        <!-- Border -->
+                        <div class="media-decoration-border" data-jarallax-element="-40"></div>
+                        <!-- Image -->
+                        <img class="media-decoration-img img-fluid" src="./image/suwatachi1.jpg" alt="立姿禮"
+                            style="object-fit: contain;">
+                        <img class="media-decoration-img img-fluid" src="./image/suwatachi2.jpg" alt="立姿禮"
+                            style="object-fit: contain;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <!-- Step 1. -->
+                    <h2 class="mb-2">
+                        <em>Step 1.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        由正坐姿勢開始，將腰伸直，兩腳尖豎起。
+                    </p>
+
+                    <!-- Step 2. -->
+                    <h2 class="mb-2">
+                        <em>Step 2.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        把右膝豎起，將右腳放在原來放右膝稍前的位置上。
+                    </p>
+
+                    <!-- Step 3. -->
+                    <h2 class="mb-2">
+                        <em>Step 3.</em>
+                    </h2>
+                    <!-- Text -->
+                    <p class="mb-0">
+                        把身體重心移到右腳上、起立，接著把左腳向前移和右腳並立。恢復到開始立時的自然站立姿勢。
+                    </p>
+
+                    <!-- Attention -->
+                    <h2 class="mb-2">
+                        <em style="color: firebrick;">注意要點：</em>
+                    </h2>
+                    <p style="background-color: lightcoral; width: fit-content;">
+                        1.在起立或坐時，都不要搖擺身體，不要左顧右盼。動作要嚴肅、認真、禮貌。
+                    </p>
+                    <p style="background-color: lightcoral; width: fit-content;">
+                        2.訓練場內的禮法：在訓練開始或終了時，雙方距離4米相對行禮（用立姿禮或坐姿禮）。
+                    </p>
+                    <p style="background-color: lightcoral; width: fit-content;">
+                        3.出入訓練場時需向柔道場地行立姿禮，訓練場內的人必須行禮，當對方站立時行立姿禮，對方坐時行坐姿禮。在別人面前走過時要點頭。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <!-- 團體賽的禮法 -->
+    <section class="pt-7 pt-md-9" style="padding: 0 20px 0 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <!-- Text -->
+                    <h3 style="text-decoration-line: overline;
+                    text-decoration-style: solid ;
+                    text-decoration-color:darkcyan;
+                    text-decoration-thickness:1px;">
+                        團體賽的禮法：
+                    </h3>
+                </div>
+                <div class="col-md-4">
+                    <!-- Media -->
+                    <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+                        <!-- Border -->
+                        <div class="media-decoration-border" data-jarallax-element="-40"></div>
+                        <!-- Image -->
+                        <img class="media-decoration-img img-fluid" src="./image/teamlei2.jpg" alt="立姿禮"
+                            style="object-fit: contain;">
+                        <img class="media-decoration-img img-fluid" src="./image/teamlei4.jpg" alt="立姿禮"
+                            style="object-fit: contain;">
+                        <img class="media-decoration-img img-fluid" src="./image/teamlei6.jpg" alt="立姿禮"
+                            style="object-fit: contain;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <!-- Step 1. -->
+                    <div>
+                        <h2 class="mb-2">
+                            <em>Step 1.</em>
+                        </h2>
+                        <!-- Text -->
+                        <p class="mb-0">
+                            進入比賽柔道場地時行立姿禮，再往前至比賽場地。
+                        </p>
+                    </div>
+
+                    <!-- Step 2. -->
+                    <div>
+                        <h2 class="mb-2">
+                            <em>Step 2.</em>
+                        </h2>
+                        <!-- Text -->
+                        <p class="mb-0">
+                            雙方在比賽場地中間排列整齊，先轉向上位（司令台）行立姿禮，再轉回行立姿禮。
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3. -->
+                    <div>
+                        <h2 class="mb-2">
+                            <em>Step 3.</em>
+                        </h2>
+                        <!-- Text -->
+                        <p class="mb-0">
+                            裁判於比賽結束後宣布比賽結果，判定後雙方先行立姿禮，再轉向上位（司令台）行立姿禮。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <!-- footer -->
+    <div style="position: relative; padding: 0 20px 0 20px;">
+        <hr style="width: 95%; position: absolute; bottom: 10px;">
+        <footer style="color: black; text-align: left; position: absolute; left: 33px; bottom: 5px;">&copy; meihan 2022
+        </footer>
+    </div>
+
+</body>
+</html>

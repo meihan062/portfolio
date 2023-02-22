@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>基礎柔道介紹</title>
+
+    <style>
+        img {
+            width: 500px;
+            height: 700px;
+        }
+
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 15px;
+        }
+
+        .header-sticky {
+            -webkit-transform: translate(0, 0);
+            -moz-transform: translate(0, 0);
+            transform: translate(0, 0);
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            transition-delay: 0s;
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+        }
+
+        .container-fluid {
+            max-width: 1600px;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar>.container,
+        .navbar>.container-fluid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-inv .navbar-nav>.disabled>a,
+        .navbar-inv .navbar-nav>.disabled>a:focus,
+        .navbar-inv .navbar-nav>.disabled>a:hover {
+            color: #444;
+            background-color: transparent
+        }
+
+        .navbar-inv .navbar-nav>.open>a,
+        .navbar-inv .navbar-nav>.open>a:focus,
+        .navbar-inv .navbar-nav>.open>a:hover {
+            color: #fff;
+            background-color: #080808
+        }
+
+        .navbar-inv .navbar-toggle {
+            border-color: #333
+        }
+
+        .navbar-inv .navbar-toggle:focus,
+        .navbar-inv .navbar-toggle:hover {
+            background-color: #333
+        }
+
+        .navbar-inv .navbar-toggle .icon-bar {
+            background-color: #fff
+        }
+
+        .navbar-inv .navbar-collapse,
+        .navbar-inv .navbar-form {
+            border-color: #101010
+        }
+
+        .navbar-inv .navbar-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .navbar-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .btn-link:focus,
+        .navbar-inv .btn-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link[disabled]:focus,
+        .navbar-inv .btn-link[disabled]:hover,
+        fieldset[disabled] .navbar-inverse .btn-link:focus,
+        fieldset[disabled] .navbar-inverse .btn-link:hover {
+            color: #444
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .navbar-expand-lg>.container,
+            .navbar-expand-lg>.container-fluid {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.dropdown-header {
+                border-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu .divider {
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a {
+                color: #9d9d9d
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:hover {
+                color: #fff;
+                background-color: transparent
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:hover {
+                color: #fff;
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:hover {
+                color: #444;
+                background-color: transparent
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            .navbar-expand-lg {
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+            }
+
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+            }
+
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                position: absolute;
+            }
+
+            .navbar-expand-lg .navbar-nav .nav-link {
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+            }
+
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+            }
+
+            .navbar-expand-lg .navbar-toggler {
+                display: none;
+            }
+        }
+    </style>
+    
+</head>
+
+<body style="position: relative; background-color: rgba(71, 78, 93, 0.45);">
+
+    <!-- nav-bar -->
+    <header class="header-sticky">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-inv" style="background-color: darkslategrey; opacity: 0.85;">
+                    <div class="navbar-header">
+                        <!-- 隱藏選單按鈕 -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="color: darkgray;">Judo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#" style="color: darkgray;">首頁</a></li>
+                            <li><a href="history.html" style="color: darkgray;">歷史及段位</a></li>
+                            <li><a href="manner.html" style="color: darkgray;">精神與禮儀</a></li>
+                            <li><a href="skill.html" style="color: darkgray;">柔道的技術</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                    style="color: darkgray;">動作介紹<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./action/action_SEOI-NAGEL.html">摔倒法(Standing Techniques)</a></li>
+                                    <li><a href="./action/action_HON-KESA-GATAME.html">壓制法(Holding Techniques)</a></li>
+                                    <li><a href="./action/action_HADAKA-JIME.html">勒頸法(Strangling Techniques)</a></li>
+                                    <li><a href="./action/action_UDE-HISHIGI-JUJI-GATAME.html">關節法(Joint Techniques)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="address.html" style="color: darkgray;">全台柔道館地址</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- image -->
+    <div class="jumbotron" style="position: relative; background-color: rgba(71, 78, 93, 0);">
+        <div class="container text-center">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- 圖片下方的圓點 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- image -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="./image/teamlei2.jpg" class="center-block" alt="團體賽的禮法">
+                    </div>
+
+                    <div class="item">
+                        <img src="./image/teamlei1.jpg" class="center-block" alt="團體賽的禮法">
+                    </div>
+
+                    <div class="item">
+                        <img src="./image/teamlei6.jpg" class="center-block" alt="團體賽的禮法">
+                    </div>
+                </div>
+
+                <!-- 控制上一張和下一張 -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- news -->
+    <div class="container">
+        <div class="row">
+            <!-- news 1 -->
+            <div class="col-md-4">
+                <div class="card mb-4" style="background-color: floralwhite; border: 2px solid black;">
+                    <!-- image -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="225" fill="currentColor"
+                        class="bi bi-file-text" viewBox="0 0 16 16" style="padding: 10px 0 0 0;">
+                        <path
+                            d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
+                        <path
+                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                    </svg>
+                    <!-- text -->
+                    <div class="card-body" style="padding: 0 10px 5px 10px;">
+                        <div style="width: 100%; height: 100px; overflow: hidden;">
+                            <h4>111年裁判資格檢定及管理實施計畫</h4>
+                            <p class="card-text">本計畫經中華民國體育運動總會111年10月20日體總業字第1110002291號函備查
+                                <br>
+                                本計畫經教育部111年11月4日臺教授體字第1110040233號函備查
+                            </p>
+                        </div>
+                        <br>
+                        <div class="justify-content-between">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a target="_blank"
+                                        href="http://www.judo.org.tw/news_info.php?id=1130">more</a></button>
+                            </div>
+                            <small style="position: absolute; right: 28px; bottom: 7px;">1 week ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- news 2 -->
+            <div class="col-md-4">
+                <div class="card mb-4" style="background-color: floralwhite; border: 2px solid black;">
+                    <!-- image -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="225" fill="currentColor"
+                        class="bi bi-exclamation-circle" viewBox="0 0 16 16" style="padding: 10px 0 0 0;">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                    </svg>
+                    <!-- text -->
+                    <div class="card-body" style="padding: 0 10px 5px 10px;">
+                        <div style="width: 100%; height: 100px; overflow: hidden;">
+                            <h4>111年全國中正盃柔錦賽(國高中組)注意事項</h4>
+                            <p class="card-text">
+                                自11/14起防疫政策鬆綁，取消具有「接觸不特定人士或無法保持社交距離」性質之場所(域)人員(民眾)之COVID-19疫苗追加劑(3劑)接種或快篩之限制，但依然實施場地管制，敬請配合以下相關事項：
+                            </p>
+                        </div>
+                        <br>
+                        <div class="justify-content-between">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a target="_blank"
+                                        href="http://www.judo.org.tw/news_info.php?id=1129">more</a></button>
+                            </div>
+                            <small style="position: absolute; right: 28px; bottom: 7px;">2 weeks ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- news 3 -->
+            <div class="col-md-4">
+                <div class="card mb-4" style="background-color: floralwhite; border: 2px solid black;">
+                    <!-- image -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="225" fill="currentColor"
+                        class="bi bi-calendar-event" viewBox="0 0 16 16" style="padding: 10px 0 0 0;">
+                        <path
+                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                    </svg>
+                    <!-- text -->
+                    <div class="card-body" style="padding: 0 10px 5px 10px;">
+                        <div style="width: 100%; height: 100px; overflow: hidden;">
+                            <h4>111年全國柔道錦標賽-6月場延期辦理</h4>
+                            <p class="card-text">近來新冠肺炎疫情嚴峻，為考量所有參賽選手、隊職員及賽會工作人員之健康安全，降低感染風險，
+                                111年全國柔道錦標賽將延期辦理(暫定為8月)
+                            </p>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a target="_blank"
+                                        href="http://www.judo.org.tw/news_info.php?id=1087">more</a></button>
+                            </div>
+                            <small style="position: absolute; right: 28px; bottom: 7px;">1 month ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <!-- footer -->
+    <div style="position: relative; padding: 0 20px 0 20px;">
+        <hr style="width: 95%; position: absolute; bottom: 10px;">
+        <footer style="color: black; text-align: left; position: absolute; left: 33px; bottom: 5px;">&copy; meihan 2022
+        </footer>
+    </div>
+
+</body>
+</html>

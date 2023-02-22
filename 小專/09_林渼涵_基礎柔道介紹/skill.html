@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_js/bootstrap.bundle.js"></script>
+    <title>skill</title>
+
+    <style>
+        thead {
+            background-color: darkolivegreen;
+        }
+
+        tbody {
+            background-color: darkseagreen;
+        }
+
+        .videobox {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        .videobox iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 15px;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            position: relative;
+            top: -10px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .header-sticky {
+            -webkit-transform: translate(0, 0);
+            -moz-transform: translate(0, 0);
+            transform: translate(0, 0);
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            transition-delay: 0s;
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+        }
+
+        .container-fluid {
+            max-width: 1600px;
+        }
+
+        .navbar>.container,
+        .navbar>.container-fluid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-inv .navbar-nav>.disabled>a,
+        .navbar-inv .navbar-nav>.disabled>a:focus,
+        .navbar-inv .navbar-nav>.disabled>a:hover {
+            color: #444;
+            background-color: transparent
+        }
+
+        .navbar-inv .navbar-nav>.open>a,
+        .navbar-inv .navbar-nav>.open>a:focus,
+        .navbar-inv .navbar-nav>.open>a:hover {
+            color: #fff;
+            background-color: #080808
+        }
+
+        .navbar-inv .navbar-toggle {
+            border-color: #333
+        }
+
+        .navbar-inv .navbar-toggle:focus,
+        .navbar-inv .navbar-toggle:hover {
+            background-color: #333
+        }
+
+        .navbar-inv .navbar-toggle .icon-bar {
+            background-color: #fff
+        }
+
+        .navbar-inv .navbar-collapse,
+        .navbar-inv .navbar-form {
+            border-color: #101010
+        }
+
+        .navbar-inv .navbar-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .navbar-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .btn-link:focus,
+        .navbar-inv .btn-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link[disabled]:focus,
+        .navbar-inv .btn-link[disabled]:hover,
+        fieldset[disabled] .navbar-inverse .btn-link:focus,
+        fieldset[disabled] .navbar-inverse .btn-link:hover {
+            color: #444
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .navbar-expand-lg>.container,
+            .navbar-expand-lg>.container-fluid {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.dropdown-header {
+                border-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu .divider {
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a {
+                color: #9d9d9d
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:hover {
+                color: #fff;
+                background-color: transparent
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:hover {
+                color: #fff;
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:hover {
+                color: #444;
+                background-color: transparent
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+
+            .navbar-expand-lg {
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+            }
+
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+            }
+
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                position: absolute;
+            }
+
+            .navbar-expand-lg .navbar-nav .nav-link {
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+            }
+
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+            }
+
+            .navbar-expand-lg .navbar-toggler {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body style="position: relative; background-color: rgba(71, 78, 93, 0.45);">
+
+    <!-- nav-bar -->
+    <header class="header header-sticky">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-inv" style="background-color: darkslategrey; opacity: 0.85;">
+                    <div class="navbar-header">
+                        <!-- 隱藏選單按鈕 -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="color: darkgray;">Judo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="1_index.html" style="color: darkgray;">首頁</a></li>
+                            <li><a href="history.html" style="color: darkgray;">歷史及段位</a></li>
+                            <li><a href="manner.html" style="color: darkgray;">精神與禮儀</a></li>
+                            <li><a href="#" style="color: darkgray;">柔道的技術</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                    style="color: darkgray;">動作介紹<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./action/action_SEOI-NAGEL.html">摔倒法(Standing Techniques)</a></li>
+                                    <li><a href="./action/action_HON-KESA-GATAME.html">壓制法(Holding Techniques)</a></li>
+                                    <li><a href="./action/action_HADAKA-JIME.html">勒頸法(Strangling Techniques)</a></li>
+                                    <li><a href="./action/action_UDE-HISHIGI-JUJI-GATAME.html">關節法(Joint Techniques)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="address.html" style="color: darkgray;">全台柔道館地址</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="position: relative;">
+        <div class="container-fluid">
+            <div class="row flex-center">
+                <div class="col-12 text-center">
+                    <h2>柔道的技術</h2>
+                    <p style="padding: 0 20px 0 20px">
+                        柔道的技可以分為3種：分別是投技（摔擲使對手跌倒的技巧）、固技（對手跌倒後，限制對手行動）及當身技（攻擊技巧），柔道以其投技及固技著名。
+                        <br>
+                        柔道練習者一般也會花一些時間練習受身，也就是不會造成重大傷害的安全跌倒方式。
+                        受身有包括後受身（後滾翻）、橫受身（側後滾翻）、前受身（前滾翻）等。
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 投技 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="padding: 0 20px 0 20px">
+        <div class="container-fluid">
+            <div>
+                <div class="col-12 text-center">
+                    <h3>投技</h3>
+                </div>
+                <p>投技中包括了所有摔擲或絆倒對手（受方）的技術，一般目的是使受方的背部朝下躺在地上。一般包括以下三個步驟：
+                    <br>
+                    破勢（Kuzushi，崩し）：先破壞對方平衡。
+                    <br>
+                    取位（Tsukuri，作り）：轉身開始摔擲。
+                    <br>
+                    施術（Kake，掛け）：進行及完成摔擲。
+                    <br>
+                    投技一般的練習會用一種日文稱為uchi komi（内込）的方式，重覆破壞平衡、轉身開始摔擲的動作，但不實際進行摔擲。
+                    投技又可以分為二種：一種是立技，取方在站立姿勢下摔擲對手，另一種則是捨身技，取方為了摔擲受方，自己先行跌倒。
+                    立技又可以進一步分為用手臂摔擲受方的手技、利用腰部上移摔擲受方的腰技、利用腿移摔擲受方的足技。
+                </p>
+            </div>
+            <div>
+                <table class="table table-bordered" style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th colspan="5" class="text-center">投技</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" class="text-center">立技</td>
+                            <td colspan="2" class="text-center">捨身技</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">手技</td>
+                            <td scope="row">腰技</td>
+                            <td scope="row">足技</td>
+                            <td scope="row">真捨身技</td>
+                            <td scope="row">橫捨身技</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 固技 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="padding: 0 20px 0 20px">
+        <div class="container-fluid">
+            <div>
+                <div class="col-12 text-center">
+                    <h3>固技</h3>
+                </div>
+                <p>固技可以進一步再細分為絆倒及將對方壓制在地的壓制技、利用鎖喉或勒住使對方屈服的絞技、及對關節施力使其疼痛的關節技。
+                    另一個相關的概念稱為寢技，是在非站立姿勢下使用的技巧。在競技柔道中只允許對肘關節的關節技。
+                </p>
+            </div>
+            <div>
+                <table class="table table-bordered" style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="text-center">固技</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row" class="text-center">壓制技</td>
+                            <td scope="row" class="text-center">絞技</td>
+                            <td scope="row" class="text-center">関節技</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 當身技 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="padding: 0 20px 0 20px">
+        <div class="container-fluid">
+            <div>
+                <div class="col-12 text-center">
+                    <h3>當身技</h3>
+                </div>
+                <p>當身技是以拳、指尖、手刀、肘、膝蓋、蹠頭、踵等部位攻擊對手之要害以制服對方的一種技術。
+                    在亂取（亂取＝實戰練習）或比賽時只用投技與固技，由於使用當身技會發生危險，所以只當作「型」（型 = 約束練習）來練習。
+                </p>
+            </div>
+            <div>
+                <table class="table table-bordered" style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="text-center">當身技</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row" class="text-center">突技</td>
+                            <td scope="row" class="text-center">打技</td>
+                            <td scope="row" class="text-center">蹴技</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 受身 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="padding: 0 20px 0 20px">
+        <div class="container-fluid">
+            <div>
+                <div class="col-12 text-center">
+                    <h3>受身</h3>
+                </div>
+                <p>雖然柔道或MMA場館的地面多數有蓆或軟墊等保護設施，但如果不懂得安全落地的方法仍可能會受傷，因此也要了解受身這個安全的落地方式。
+                    柔道的受身可分為以下四種：
+                    <br>
+                    後受身、橫受身、前受身、前滾受身。
+                </p>
+            </div>
+            <div>
+                <table class="table table-bordered" style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th colspan="4" class="text-center">受身</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row" class="text-center">後受身</td>
+                            <td scope="row" class="text-center">橫受身</td>
+                            <td scope="row" class="text-center">前受身</td>
+                            <td scope="row" class="text-center">前滾受身</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- video -->
+            <div>
+                <h3>後受身</h3>
+                <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/QXbnKnoluAw" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+            <div>
+                <h3>橫受身</h3>
+                <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/E-JZyOHaMMM" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+            <div>
+                <h3>前受身</h3>
+                <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/eD2LAf2ztys" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+            <div>
+                <h3>前滾受身</h3>
+                <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/s3IP719F1dw" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <!-- footer -->
+    <div style="position: relative; padding: 0 20px 0 20px;">
+        <hr style="width: 95%; position: absolute; bottom: 10px;">
+        <footer style="color: black; text-align: left; position: absolute; left: 33px; bottom: 5px;">&copy; meihan 2022
+        </footer>
+    </div>
+
+</body>
+</html>

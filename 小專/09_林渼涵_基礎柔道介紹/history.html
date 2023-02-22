@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>history</title>
+
+    <style>
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 15px;
+        }
+
+        .header-sticky {
+            -webkit-transform: translate(0, 0);
+            -moz-transform: translate(0, 0);
+            transform: translate(0, 0);
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            transition-delay: 0s;
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+        }
+
+        .container-fluid {
+            max-width: 1600px;
+        }
+
+        .navbar>.container,
+        .navbar>.container-fluid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        section {
+            position: relative;
+            top: -10px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        thead {
+            background-color: darkolivegreen;
+        }
+
+        tbody {
+            background-color: darkseagreen;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar-inv .navbar-nav>.disabled>a,
+        .navbar-inv .navbar-nav>.disabled>a:focus,
+        .navbar-inv .navbar-nav>.disabled>a:hover {
+            color: #444;
+            background-color: transparent
+        }
+
+        .navbar-inv .navbar-nav>.open>a,
+        .navbar-inv .navbar-nav>.open>a:focus,
+        .navbar-inv .navbar-nav>.open>a:hover {
+            color: #fff;
+            background-color: #080808
+        }
+
+        .navbar-inv .navbar-toggle {
+            border-color: #333
+        }
+
+        .navbar-inv .navbar-toggle:focus,
+        .navbar-inv .navbar-toggle:hover {
+            background-color: #333
+        }
+
+        .navbar-inv .navbar-toggle .icon-bar {
+            background-color: #fff
+        }
+
+        .navbar-inv .navbar-collapse,
+        .navbar-inv .navbar-form {
+            border-color: #101010
+        }
+
+        .navbar-inv .navbar-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .navbar-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link {
+            color: #9d9d9d
+        }
+
+        .navbar-inv .btn-link:focus,
+        .navbar-inv .btn-link:hover {
+            color: #fff
+        }
+
+        .navbar-inv .btn-link[disabled]:focus,
+        .navbar-inv .btn-link[disabled]:hover,
+        fieldset[disabled] .navbar-inverse .btn-link:focus,
+        fieldset[disabled] .navbar-inverse .btn-link:hover {
+            color: #444
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .navbar-expand-lg>.container,
+            .navbar-expand-lg>.container-fluid {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.dropdown-header {
+                border-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu .divider {
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a {
+                color: #9d9d9d
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>li>a:hover {
+                color: #fff;
+                background-color: transparent
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.active>a:hover {
+                color: #fff;
+                background-color: #080808
+            }
+
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:focus,
+            .navbar-inv .navbar-nav .open .dropdown-menu>.disabled>a:hover {
+                color: #444;
+                background-color: transparent
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            .navbar-expand-lg {
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+            }
+
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+            }
+
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                position: absolute;
+            }
+
+            .navbar-expand-lg .navbar-nav .nav-link {
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+            }
+
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+            }
+
+            .navbar-expand-lg .navbar-toggler {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body style="position: relative; background-color: rgba(71, 78, 93, 0.45);">
+
+    <!-- nav-bar -->
+    <header class="header header-sticky">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-inv" style="background-color: darkslategrey; opacity: 0.85;">
+                    <div class="navbar-header">
+                        <!-- 隱藏選單按鈕 -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="color: darkgray;">Judo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="1_index.html" style="color: darkgray;">首頁</a></li>
+                            <li><a href="#" style="color: darkgray;">歷史及段位</a></li>
+                            <li><a href="manner.html" style="color: darkgray;">精神與禮儀</a></li>
+                            <li><a href="skill.html" style="color: darkgray;">柔道的技術</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                    style="color: darkgray;">動作介紹<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./action/action_SEOI-NAGEL.html">摔倒法(Standing Techniques)</a></li>
+                                    <li><a href="./action/action_HON-KESA-GATAME.html">壓制法(Holding Techniques)</a></li>
+                                    <li><a href="./action/action_HADAKA-JIME.html">勒頸法(Strangling Techniques)</a></li>
+                                    <li><a href="./action/action_UDE-HISHIGI-JUJI-GATAME.html">關節法(Joint Techniques)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="address.html" style="color: darkgray;">全台柔道館地址</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <!-- 歷史 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs">
+        <div class="container-fluid">
+            <div class="row flex-center">
+                <div class="col-12 mb-2 mb-lg-5 text-center">
+                    <h2 class="fs-3 fs-sm-4"><span class="text-decoration-underline">柔道的歷史</span></h2>
+                    <br>
+                </div>
+            </div>
+            <div class="row flex-center" style="padding: 0 20px 0 20px">
+                <!-- image -->
+                <div class="col-lg-4" style="position: relative; top: -20px; right: 0; bottom: 0; left: 0;">
+                    <img class=" w-100 rounded" src="./image/220px-Kano_Jigoro.jpg" alt=""
+                        data-zanim-xs='{"animation":"zoom-out","delay":0.1}' data-zanim-trigger="scroll"
+                        style="position: relative; left:95px;" />
+                </div>
+                <!-- text -->
+                <div class="col-lg-4 text-lg-end mt-5 mt-lg-0 pe-lg-3 pe-xl-4">
+                    <div class="overflow-hidden" style="position: relative; top: -20px; right: 0; bottom: 0; left: 0;">
+                        <p style="text-indent: 30px;">
+                            柔道起源於日本古代的武術柔術。
+                            現今的柔道是由日本人嘉納治五郎(講道館柔道五段)於1882年改良自日本古武道柔術而發展出來的一套運動。
+                            他是一位博學家，也是一位教育家。
+                        </p>
+                        <p style="text-indent: 30px;">
+                            1911年，日本政府開始協助推廣柔道至全國，並正式列為學校體育課程之一。
+                            柔道是「日本講道館柔道」的簡稱，是由古代的柔術演變過來的。
+                            嚴格來說，柔道只是一種體育運動，並不屬於武術。
+                            據日本歷史記載，約在公元七二零年，日本流行一種類似相撲的角力賽，稱為「體術」。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5 mt-lg-0 ps-lg-3 ps-xl-4"
+                    style="position: relative; top: -20px; right: 0; bottom: 0; left: 0;">
+                    <div class="overflow-hidden">
+                        <p>柔術興起的原因有四個：</p>
+                    </div>
+                    <div class="overflow-hidden">
+                        <p>
+                            （一）平民自衛：古時日本人十分重視階級觀念，只有貴族可以隨身帶武器，所以一般不准帶劍的百姓就要學習柔術核自衛。
+                            <br>
+                            （二）武士防身：初時古代日本武士可以隨身帶一柄長劍和一柄短劍後來他們只准帶短劍，而當謁見長官的時候，更要御下所有武器。所以他們要學習術防身。
+                            <br>
+                            （三）士兵作戰：在戰場上，士兵可以用弓箭攻擊遠處的敵人，但對付近身的敵人，就只得使用刀劍之類的武器或徒手搏擊。
+                            <br>
+                            （四）獄吏制犯：古時日本的獄卒既要制服犯人，又不能使他們受傷，所以柔術便成了他們必上的一課。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 段位 -->
+    <section class="py-6 py-md-8" id="defaultWhyUs" style="position: relative; padding: 0 20px 0 20px">
+        <div class="container-fluid">
+            <div class="row flex-center">
+                <div class="col-12 mb-2 mb-lg-5 text-center">
+                    <h2 class="fs-3 fs-sm-4"><span class="text-decoration-underline">段位和級別 :</span></h2>
+                    <p class="text-500 fst-italic">柔道的段位和級別主要以不同顏色腰帶來分別等級，不同顏色代表著不同的等級。</p>
+                    <br>
+                </div>
+            </div>
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">段級</th>
+                            <th scope="col">十段</th>
+                            <th scope="col">九段</th>
+                            <th scope="col">八段</th>
+                            <th scope="col">七段</th>
+                            <th scope="col">六段</th>
+                            <th scope="col">五段</th>
+                            <th scope="col">四段</th>
+                            <th scope="col">三段</th>
+                            <th scope="col">二段</th>
+                            <th scope="col">初段<br>(教師)</th>
+                            <th scope="col">一級</th>
+                            <th scope="col">二級</th>
+                            <th scope="col">三級</th>
+                            <th scope="col">四級</th>
+                            <th scope="col">五級</th>
+                            <th scope="col">六級<br>(初學)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>腰帶顏色</td>
+                            <td>紅</td>
+                            <td>紅</td>
+                            <td>紅白</td>
+                            <td>紅白</td>
+                            <td>紅白</td>
+                            <td>黑</td>
+                            <td>黑</td>
+                            <td>黑</td>
+                            <td>黑</td>
+                            <td>黑</td>
+                            <td>棕</td>
+                            <td>藍</td>
+                            <td>綠</td>
+                            <td>橘</td>
+                            <td>黃</td>
+                            <td>白</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <!-- footer -->
+    <div style="position: relative; padding: 0 20px 0 20px;">
+        <hr style="width: 95%; position: absolute; bottom: 10px;">
+        <footer style="color: black; text-align: left; position: absolute; left: 33px; bottom: 5px;">&copy; meihan 2022
+        </footer>
+    </div>
+
+</body>
+</html>
