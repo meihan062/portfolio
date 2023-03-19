@@ -94,25 +94,8 @@ class product extends Component {
             )
             .catch(error => console.error(error))
 
-
-        // setInterval(() => {
-
-
-            // var newState = {...this.state};
-            // newState.slideIndex += 1;
-            // this.showSlides(newState.slideIndex);
-            // this.setState(newState);
-            // console.log(this.state.slideIndex);
-            // this.showSlides(a);
-
-        //     this.setState(prevState => ({ slideIndex: prevState.slideIndex + 1 }), () => {
-        //         console.log(this.state.slideIndex);
-        //     });
-        // }, 6000);
-
         this.timerID = setInterval(() => {
             this.setState(prevState => ({ slideIndex: prevState.slideIndex + 1 }), () => {
-            //   console.log(this.state.slideIndex);
               this.showSlides(this.state.slideIndex);
             });
           }, 6000);
@@ -127,16 +110,12 @@ class product extends Component {
 
     plusSlides = (n) => {
         this.showSlides(this.state.slideIndex += n);
-        // this.setState({
-        //     slideIndex: this.state.slideIndex + n
-        //   });
     }
     currentSlide = (n) => {
         this.showSlides(this.state.slideIndex = n);
     }
 
     showSlides(n) {
-        // var newState = { ...this.state };
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
 
@@ -191,37 +170,6 @@ class product extends Component {
         }
 
 
-        // product
-        // let productImg = [];
-        // for (let i = 0; i < this.state.productTitle.length; i++) {
-        //     productImg.push(
-        //         <div className='ProductListDiv typ1' style={this.startStyle}>
-        //             <img src={this.state.productImages[i]} className="ProductListImg" alt='' />
-        //             <NavLink to={`/航海王/${this.state.productTitle[i]}`} className="ProductListTitle" href='/product_intro.js'>{this.state.productTitle[i]}</NavLink>
-        //         </div>
-        //     )
-        // }
-
-        // let productImg2 = [];
-        // for (let i = 0; i < this.state.productTitle2.length; i++) {
-        //     productImg2.push(
-        //         <div className='ProductListDiv typ2' style={this.ImgListStyle}>
-        //             <img src={this.state.productImages2[i]} className="ProductListImg" alt='' />
-        //             <NavLink to={`/黃阿媽的後宮生活/${this.state.productTitle2[i]}`} className="ProductListTitle" href='/product_intro.js'>{this.state.productTitle2[i]}</NavLink>
-        //         </div>
-        //     )
-        // }
-
-        // let productImg3 = [];
-        // for (let i = 0; i < this.state.productTitle3.length; i++) {
-        //     productImg3.push(
-        //         <div className='ProductListDiv typ3' style={this.ImgListStyle}>
-        //             <img src={this.state.productImages3[i]} className="ProductListImg" alt='' />
-        //             <NavLink to={`/哥吉拉/${this.state.productTitle3[i]}`} className="ProductListTitle" href='/product_intro.js'>{this.state.productTitle3[i]}</NavLink>
-        //         </div>
-        //     )
-        // }
-
         // productimages
         const { products, products2, products3 } = this.state;
         let productImg = [];
@@ -233,7 +181,6 @@ class product extends Component {
                     {products.map(product => (
                         <div key={product.p_id} className='ProductListDiv'>
                             <img src={require(`../images/product/${product.p_id}.png`)} className="ProductListImg" alt={product.p_name} />
-                            {/* <NavLink to={`/product/${product.p_type}/${product.p_name}`} className="ProductListTitle" href='/product_intro.js'>{product.p_name}</NavLink> */}
                             <NavLink to={`/product/${product.p_type}/${product.p_id}`} className="ProductListTitle" href='/product_intro.js'>{product.p_name}</NavLink>
                         </div>
                     ))}
@@ -265,13 +212,6 @@ class product extends Component {
             )
         }
 
-        // var i = 1;
-        // var intervalId = setInterval(function () {
-        //     this.plusSlides(i);
-        // }, 1000);
-
-
-        // const { products } = this.state;
         return (
             <body className='BodyProduct'>
                 <Index />
@@ -288,9 +228,6 @@ class product extends Component {
                     </div>
                 </div>
                 <div className="typ">
-                    {/* 根據網址列名稱印出不同名稱(商品分類) */}
-                    {/* <h1>About {props.match.params.who}</h1> */}
-
                     <NavLink to="/product/OnePiece" className="name">航海王</NavLink> | &nbsp;
                     <NavLink to="/product/Fumenaction" className="name">黃阿媽的後宮生活</NavLink>| &nbsp;
                     <NavLink to="/product/Godzilla" className="name">哥吉拉</NavLink>
@@ -298,17 +235,7 @@ class product extends Component {
 
 
                 <hr className='separate1' />
-                {/* <div className="ProductList"> */}
                 {productImg}
-                {/* {productImg2}
-                    {productImg3} */}
-                {/* {products.map(product => (
-                        <div key={product.p_id} className='ProductListDiv'>
-                            <img src={require(`${product.p_img}`)} className="ProductListImg" alt={product.p_name} />
-                            <NavLink to={`/product/航海王/${product.p_name}`} className="ProductListTitle" href='/product_intro.js'>{product.p_name}</NavLink>
-                        </div>
-                    ))} */}
-                {/* </div> */}
                 <Footer />
             </body>
         );

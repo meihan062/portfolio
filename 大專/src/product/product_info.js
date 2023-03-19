@@ -26,28 +26,11 @@ class ProductInfo extends Component {
             userItem: {},
             store: [],
             county: "",
-            // order: {
-            //     orderName: '',
-            //     orderTel: '',
-            //     receiveName: '',
-            //     receiveTel: '',
-            //     delivery: '',
-            //     address: '',
-            //     pay: '',
-            //     total: '',
-            //     cardNumber: '',
-            //     cardDate: '',
-            //     cardCvv: '',
-            //     invoice: '',
-            //     number: '',
-            //     remark: ''
-            // }
         };
         this.DeliveryChange = this.DeliveryChange.bind(this); // 綁定DeliveryChange方法
         this.PayChange = this.PayChange.bind(this); // 綁定PayChange方法
         this.InvoiceChange = this.InvoiceChange.bind(this); // 綁定InvoiceChange方法
         this.StoreChange = this.StoreChange.bind(this); // 綁定StoreChange方法
-        // this.handleSubmit = this.handleSubmit.bind(this); // 綁定handleSubmit方法
     }
 
     Style = {
@@ -91,42 +74,11 @@ class ProductInfo extends Component {
             )
             .catch(error => console.error(error))
 
-        // 更新資料
-        // fetch('http://localhost:8000/product/step2', {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         order_name: this.state.order_name,
-        //         order_tel: this.state.order_tel,
-        //         receive_name: this.state.receive_name,
-        //         receive_tel: this.state.receive_tel,
-        //         delivery: this.state.delivery,
-        //         address: this.state.address,
-        //         pay: this.state.pay,
-        //         total: this.state.total,
-        //         card_number: this.state.card_number,
-        //         card_date: this.state.card_date,
-        //         card_cvv: this.state.card_cvv,
-        //         invoice: this.state.invoice,
-        //         number: this.state.number,
-        //         remark: this.state.remark
-        //     })
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
-        //     .catch(error => {
-        //         console.error(error);
-        //     });
     }
 
     // 運送方式選擇
     DeliveryChange(event) {
         this.setState({ selectedOption: event.target.value }); // 更新selectedOption為選取的option值
-        // this.test(event.target.textContent);
         var addressHome = document.getElementsByTagName("input")[4];
         var addressShop = document.getElementsByClassName("ProductInfoShopSelect")[0];
         var newStyle = { ...this.Style };
@@ -174,7 +126,6 @@ class ProductInfo extends Component {
             card.setAttribute("style", newStyle);
             cardDate.setAttribute("style", newStyle);
             cardCvv.setAttribute("style", newStyle);
-            // content.style.height = "100%";
             this.setState({ PayBr: true, });
         }
     }
@@ -186,7 +137,6 @@ class ProductInfo extends Component {
         var invoice = document.getElementsByClassName("invoice")[0];
         var newStyle = { ...this.Style };
         newStyle.display = "block"
-        // var addressShop = document.getElementsByTagName("input")[5];
         if (event.target.value === "no") {
             alert("請選擇發票開立方式");
             invoice.style.display = "none";
@@ -246,7 +196,6 @@ class ProductInfo extends Component {
             const PayOption = selectPay.querySelector('option:checked');
             const selectInvoice = document.getElementsByClassName("ProductInfoSelect")[3];
             const InvoiceOption = selectInvoice.querySelector('option:checked');
-            // const DeliveryOptionText = DeliveryOption.textContent;
             localStorage.setItem('orderPrice', price);
             localStorage.setItem('orderFreight', freight);
             localStorage.setItem('orderTotal', total);
@@ -358,7 +307,6 @@ class ProductInfo extends Component {
                             <input type="tel" pattern="[0-9]{10}" className='ProductInfoInput' value={this.state.TheTelValue} onClick={this.TheTel.bind(this, "0912345678")} />
                             <br /><br />
                             <text className='ProductInfoInputTitle'>運送方式 </text>
-                            {/* <select name="ProductInfoDelivery" onChange={this.DeliveryChange} className="ProductInfoSelect"> */}
                             <select name="ProductInfoDelivery" onChange={this.DeliveryChange} className="ProductInfoSelect" onSelect={this.handleSelect}>
                                 <option value="no">請選擇運送方式</option>
                                 <option className="home" value="home">宅配到家</option>
@@ -415,7 +363,6 @@ class ProductInfo extends Component {
 
                     <div className="ProductInfoBtn">
                         <button className="ProductInfoNext" onClick={this.Step.bind(this, 2)}>送出訂單</button>
-                        {/* <button className="ProductInfoNext" onClick={this.handleSubmit}>送出訂單</button> */}
                         <button className="ProductInfoShopping" onClick={this.Step.bind(this, 1)}>繼續購物</button>
                     </div>
                 </div>
@@ -426,32 +373,4 @@ class ProductInfo extends Component {
     }
 }
 
-// handleChange = (event) => {
-//     const target = event.target;
-//     const value = target.type === 'checkbox' ? target.checked : target.value;
-//     const name = target.name;
-//     this.setState({
-//         [name]: value
-//     });
-// }
-
-// handleSelect = (event) => {
-//     const selectedOptionText = event.target.options[event.target.selectedIndex].text;
-//     this.setState({
-//         selectedValue: selectedOptionText
-//     });
-// }
-
-// handleSubmit(event) {
-//     event.preventDefault();
-//     將表單資料傳給後端 API
-//     axios.post('/product/step2', this.state.order)
-//         .then(response => {
-//             console.log(response.data);
-//             this.Step(2);
-//         })
-//         .catch(error => {
-//             console.error(error);
-//         });
-// }
 export default ProductInfo;

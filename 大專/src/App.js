@@ -33,11 +33,6 @@ import ProductStep1 from './product/product_cart.js';
 import ProductStep2 from './product/product_info.js';
 import ProductStep3 from './product/product_check.js';
 import ProductHistory from './product/product_history.js';
-// ----------TEST--------------
-// import ProductTest from './product/test.js';
-import IntroTest from './product/testIntro.js';
-import CartTest from './product/testCart3.js';
-import InfoTest from './product/testInfo.js';
 
 
 
@@ -86,15 +81,6 @@ function App() {
           <Route path="/product/step2" component={ProductStep2} />
           <Route path="/product/step3" component={ProductStep3} />
           <Route path="/member/orderList/productlist/0912345678/20230101123543" component={ProductHistory} />
-          {/* <Route path="/member/orderList/productlist/:o_order_tel/:o_id" component={ProductHistory} /> */}
-
-
-          {/* <Route path="/test" component={ProductTest} />
-          <Route path="/test2" component={ProductTest} /> */}
-          <Route path="/testIntro/:productName" component={IntroTest} />
-          <Route path="/testCart3" component={CartTest} />
-          <Route path="/testInfo" component={InfoTest} />
-
         </Switch></div>
     </BrowserRouter>);
 }

@@ -8,7 +8,6 @@ import Step from './product_step.js';
 
 
 import img1 from '../images/product/A001blue.png';
-// import img2 from '../images/product/4.png';
 
 
 class productCheck extends Component {
@@ -20,8 +19,6 @@ class productCheck extends Component {
             userItem: {},
         };
     }
-    // state = {
-    // }
     style = {
         display: 'grid'
     }
@@ -154,7 +151,6 @@ class productCheck extends Component {
                     </form>
                 </div>
                 <br />
-                {/* <center><button className="FormDeleteBtn" onclick="deleteOrder()">取消訂單</button></center> */}
                 <Footer />
             </body>
         );

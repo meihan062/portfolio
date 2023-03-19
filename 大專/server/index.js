@@ -295,64 +295,7 @@ db.connect(function (err) {
     }
 });
 
-// 我的
-// app.get("/test", function (request, response) {
-//     db.query('SELECT p_id, p_name, p_img, p_type FROM product where p_id in ("A001blue", "A002", "A003luffy")',
-//         function (err, rows) {
-//             if (err) {
-//                 console.error(err);
-//             }
-//             console.log(rows);
-//             response.setHeader('Content-Type', 'application/json');
-//             response.send(JSON.stringify(rows));
-//         }
-//     );
-// })
-
-// app.get("/test2", function (request, response) {
-//     db.query('SELECT p_id, p_name, p_img, p_type FROM product where p_id in ("B001", "B002pink", "B003")',
-//         function (err, rows) {
-//             if (err) {
-//                 console.error(err);
-//             }
-//             console.log(rows);
-//             response.setHeader('Content-Type', 'application/json');
-//             response.send(JSON.stringify(rows));
-//         }
-//     );
-// })
-
-// app.get("/testIntro/:productName", function (request, response) {
-//     var productImg = request.params.productName;
-//     // db.query('SELECT p_id, p_name, p_price, p_img FROM product where p_id in ("A001blue", "A001red", "A001green")',
-//     db.query('SELECT p_id, p_name, p_price, p_img, p_describe FROM product where p_name = ?',
-//     [productImg],
-//         function (err, rows) {
-//             if (err) {
-//                 console.error(err);
-//             }
-//             console.log(rows);
-//             response.setHeader('Content-Type', 'application/json');
-//             response.send(JSON.stringify(rows));
-//         }
-//     );
-// })
-
-// app.get("/test/:productId", function (request, response) {
-//     var productId = request.params.productId;
-//     db.query('SELECT p_id, p_name, p_price, p_img FROM product where p_id = ?',
-//         [productId],
-//         function (err, rows) {
-//             if (err) {
-//                 console.error(err);
-//             }
-//             console.log(rows);
-//             response.setHeader('Content-Type', 'application/json');
-//             response.send(JSON.stringify(rows));
-//         }
-//     );
-// })
-
+// 林的
 app.get("/product", function (request, response) {
     db.query('SELECT p_id, p_name, p_img, p_type FROM product where p_id in ("A001blue", "A002", "A003luffy")',
         function (err, rows) {
@@ -367,11 +310,7 @@ app.get("/product", function (request, response) {
 })
 
 app.get("/product/OnePiece", function (request, response) {
-// app.get("/product/:type", function (request, response) {
-    // var typeName = request.params.type;
     db.query('SELECT p_id, p_name, p_img, p_type FROM product where p_id in ("A001blue", "A002", "A003luffy")',
-    // db.query('SELECT p_id, p_name, p_img, p_type FROM product where p_type = ?',
-        // [typeName],
         function (err, rows) {
             if (err) {
                 console.error(err);
@@ -412,7 +351,7 @@ app.get("/product/Godzilla", function (request, response) {
 app.get("/product/OnePiece/:productId", function (request, response) {
     var productImg = request.params.productId;
     db.query('SELECT p_id, p_name, p_price, p_img, p_describe FROM product where p_id = ?',
-    [productImg],
+        [productImg],
         function (err, rows) {
             if (err) {
                 console.error(err);
@@ -450,29 +389,5 @@ app.put("/product/step2", function (request, response) {
     );
 })
 
-// app.get("/product/Godzilla/:who", function (request, response) {
-//     db.query('SELECT p_id, p_name, p_price FROM product where p_id in ("C001", "C002", "C003")',
-//         function (err, rows) {
-//             if (err) {
-//                 console.error(err);
-//             }
-//             console.log(rows);
-//             response.setHeader('Content-Type', 'application/json');
-//             response.send(JSON.stringify(rows));
-//         }
-//     );
-// })
 
-// app.get("/product/Fumenaction/:who", function (request, response) {
-//     db.query('SELECT p_id, p_name, p_price FROM product where p_id in ("C001", "C002", "C003")',
-//         function (err, rows) {
-//             if (err) {
-//                 console.error(err);
-//             }
-//             console.log(rows);
-//             response.setHeader('Content-Type', 'application/json');
-//             response.send(JSON.stringify(rows));
-//         }
-//     );
-// })
 

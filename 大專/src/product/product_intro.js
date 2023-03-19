@@ -29,7 +29,6 @@ class ProductIntro extends Component {
 
     componentDidMount() {
         const { productId } = this.props.match.params;
-        // const { productType } = this.props.match.params;
         fetch(`http://localhost:8000/product/OnePiece/${productId}`)
             .then(response => {
                 if (!response.ok) {
@@ -82,14 +81,12 @@ class ProductIntro extends Component {
             newState.num = 0;
         }
         this.setState(newState);
-        // console.log(newState.num);
     }
 
     addNumber = () => {
         var newState = { ...this.state };
         newState.num += 1;
         this.setState(newState);
-        // console.log(newState.num);
     }
 
     TypeSelect(event) {
@@ -175,45 +172,8 @@ class ProductIntro extends Component {
                         <a className="ProductIntroPrev" onClick={this.plusSlides.bind(this, -1)}>❮</a>
                         <a className="ProductIntroNext" onClick={this.plusSlides.bind(this, 1)}>❯</a>
                     </div>
-                    {/* <div className="ProductIntroContent">
-                        <h1 className='ProductIntroTitle'>雙面飲料手提袋</h1>
-                        <p className='ProductIntro'>
-                            · 自己喝太孤單，草帽海賊團來當神隊友。
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可雙面翻轉的飲料提袋，正面是全彩熱昇華轉印，背面是精美刺繡，
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一次擁有兩個夥伴，優質又超值。
-                        </p>
-                        <p className='ProductIntro'>
-                            · 雙面飲料提袋一共三款：
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;紅款：魯夫＆娜美
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;綠款：喬巴＆索隆
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;藍款：香吉士＆羅賓
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;夥伴們收集開始囉！！！
-                        </p>
-                        <hr className='separate2' />
-                        <h3 className='ProductIntroPrice'>NT$ 280</h3>
-                        <div className="choose">
-                            <select className='TypeSelect'>
-                                <option>請選擇款式</option>
-                                <option>紅色款</option>
-                                <option>綠色款</option>
-                                <option>藍色款</option>
-                            </select>
-                            <button type="submit" className='ProductIntroMinus' onClick={this.minusNumber}>-</button>
-                            <input type="text" value={this.state.num} className="ProductIntroText" />
-                            <button type="submit" className='ProductIntroPlus' onClick={this.addNumber}>+</button>
-                            <button className="CartBtn" onClick={this.addCart}>加入購物車</button>
-                        </div>
-                    </div> */}
-                        {intro}
-
+                    {intro}
                 </div>
-                {/* <br /><br /> */}
                 <Footer />
             </body>
         );

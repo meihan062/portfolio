@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../css/product_list2.css';
 import '../css/index.css';
 import Index from '../components/index.js';
@@ -7,12 +6,7 @@ import Footer from '../components/footer.js';
 import Step from './product_step.js';
 
 
-
 import img1 from '../images/product/A001blue.png';
-// import img2 from '../images/product/4.png';
-
-
-
 
 
 class productCart extends Component {
@@ -24,8 +18,7 @@ class productCart extends Component {
             price:''
         };
     }
-    // state = {
-    // }
+
     style = {
         display: 'grid'
     }
@@ -53,12 +46,8 @@ class productCart extends Component {
 
         var price = parseInt(total.innerHTML);
         price = count * a;
-        // var b = "NT$ "
         total.innerText = "NT$ " + price;
         sum.innerText = total.innerText;
-        // console.log(sum);
-
-
     }
 
 
@@ -84,10 +73,6 @@ class productCart extends Component {
         if (this.state.length === 0) {
             this.Step(1);
         }
-
-        // sessionStorage.removeItem('num');
-        // sessionStorage.removeItem('price');
-        // sessionStorage.removeItem('type');
     }
 
 
@@ -161,39 +146,8 @@ class productCart extends Component {
             <body className='BodyProduct'>
                 <Index />
                 <Step StepColor1={step1ClassName} StepColor2={step2ClassName} StepColor3={step3ClassName} StepNameColor1={step1NameClassName} StepNameColor2={step2NameClassName} StepNameColor3={step3NameClassName} />
-                {/* <div className="ProductCartContent">
-                    <div className="ProductCartProduct" style={this.style}>
-                        <img src={img1} className="ProductCartImg" alt='雙面飲料提袋' />
-                        p0
-                        <p className='ProductCartP'>
-                            雙面飲料提袋
-                            <br />
-                            款式 : 藍色(香吉士、羅賓)
-                        </p>
-                        <div className="ProductCartNum">
-                            <h4 className="ProductCartNumTitle">數量</h4>
-                            <div className="ProductCartNumChoose">
-                                <button className='ProductCartMinus CountBtn' onClick={this.CountNumber.bind(this, -1)}>-</button>
-                                i0
-                                <input type="text" value="1" className='ProductCartText' />
-                                <button className='ProductCartAdd CountBtn' onClick={this.CountNumber.bind(this, 1)}>+</button>
-                            </div>
-                        </div>
-                        <div className="ProductCartMoney">
-                            <h4 className="ProductCartMoneyTitle">小計</h4>
-                            p1
-                            <p className="ProductCartMoneyP">NT$ 280</p>
-                        </div>
-                        <button className='DeleteBtn' onClick={this.ProductDelete.bind(this, 1)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill DeleteBtnSvg" viewBox="0 0 16 16">
-                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                            </svg>
-                        </button>
-                    </div>
-                    <br /><br />
-                </div> */}
-                {content}
 
+                {content}
 
                 <div className="ProductCartPrice">
                     <div className="ProductCartPriceDiv">
