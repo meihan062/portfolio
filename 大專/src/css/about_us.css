@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+:root {
+    --dark-red: #cf121e;
+    --red: #ff3542;
+    --light-red: #ffe1e1;
+    --dark-green: #005743;
+    --green: #538e7a;
+    --light-green: #92d279;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #d9d9d9;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* header */
+.header_1,
+.header_2 {
+    position: relative;
+    height: 400px;
+    background: url(../images/story/about_us_images/Nantou_tea_garden_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header_3 {
+    position: relative;
+    height: 400px;
+    background: url(../images/story/tea_check_images/茶葉檢驗報告.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about {
+    position: absolute;
+    height: 10%;
+    left: 61%;
+    top: 36%;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 49px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 1.5px 0px 1px #000000;
+}
+
+.chineseLogo {
+    position: absolute;
+    height: 10%;
+    left: 80%;
+    top: 47%;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: bold;
+    font-size: 160%;
+    line-height: 27%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 11px;
+    color: #FFFFFF;
+    text-shadow: 1.5px 0px 1px #000000;
+}
+
+.rectangle {
+    position: absolute;
+    width: 11.5%;
+    height: 1.5%;
+    right: 8.5%;
+    top: 58%;
+    background: #FFFFFF;
+    box-shadow: 1.5px 0px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* 品牌故事、嚴選食材的btn樣式 */
+.StoryTwoBtnTab {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 80px;
+
+}
+
+/* 品牌故事頁面 */
+.storyContent {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+
+/*  ---------品牌起源 --------- */
+
+/* 品牌起源的內容div */
+.brandOriginContent {
+    margin-top: 90px;
+}
+
+/* 品牌起源的標題小字+方塊 */
+.left_title_Origin {
+    position: absolute;
+    height: 155px;
+    width: 45px;
+    background-color: #92D279;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-size: 30px;
+    left: 65px;
+}
+
+/* 品牌起源的茶葉裝飾 */
+.origin_tea_dec {
+    position: absolute;
+    left: 20px;
+    top: 560px;
+    height: 190px;
+    width: 115px;
+}
+
+/* 品牌起源的內文 */
+.brandOriginText {
+    position: absolute;
+    display: inline-block;
+    padding-left: 200px;
+    padding-top: 60px;
+    width: 600px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 20px;
+    color: var(--dark-green);
+    letter-spacing: 5px;
+}
+
+/* 品牌起源的圖片 */
+.t06 {
+    position: absolute;
+    padding-left: 850px;
+}
+
+
+
+/*  ---------品牌草創 --------- */
+
+/* 品牌草創的內容div */
+.brandStartContent {
+    padding-top: 500px;
+}
+
+/* 品牌草創的標題小字+方塊 */
+.left_title_Start {
+    position: absolute;
+    height: 155px;
+    width: 45px;
+    background-color: #92D279;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-size: 30px;
+    right: 60px;
+}
+
+/* 品牌草創的茶葉裝飾 */
+.start_tea_dec {
+    position: absolute;
+    left: 1200px;
+    top: 1060px;
+    height: 190px;
+    width: 115px;
+}
+
+/* 品牌草創的內文  */
+.brandStartText {
+    position: absolute;
+    display: inline-block;
+    padding-top: 60px;
+    padding-left: 600px;
+    height: 150px;
+    width: 600px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 20px;
+    color: var(--dark-green);
+    letter-spacing: 5.5px;
+}
+
+/* 品牌草創的圖片 */
+.t07 {
+    position: absolute;
+    padding-left: 50px;
+}
+
+
+
+/*  ---------品牌精神 --------- */
+
+/* 品牌精神的內容div */
+.brandSpiritContent {
+    padding-top: 400px;
+}
+
+/* 品牌精神的標題小字+方塊 */
+.left_title_Spirit {
+    position: absolute;
+    height: 155px;
+    width: 45px;
+    background-color: #92D279;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-size: 30px;
+    left: 65px;
+}
+
+/* 品牌精神的茶葉裝飾 */
+img.spirit_tea_dec {
+    position: absolute;
+    left: 20px;
+    top: 1460px;
+    height: 190px;
+    width: 115px;
+}
+
+/* 誠信、創新、用心、惜福 */
+.trust,
+.creat,
+.workhard,
+.thanks {
+    text-align: center;
+    font-weight: bold;
+    color: var(--dark-green);
+    letter-spacing: 1em;
+}
+
+/* 誠信、創新、用心、惜福的內文  */
+.trustText,
+.creatText,
+.workhardText,
+.thanksText {
+    color: var(--dark-green);
+    text-align: center;
+}
+
+/* 用心、惜福的內容範圍 */
+.WorkhardThanksText {
+    padding-bottom: 50px;
+}
+
+
+
+/* ---------品牌嚴選--------- */
+
+/* 品牌嚴選的內容div */
+.brandStrictContent {
+    position: relative;
+    display: block;
+    height: 500px;
+    padding-left: 2%;
+    padding-top: 5%;
+}
+
+/* 品牌嚴選的標題小字 */
+.left_title_Strict {
+    position: absolute;
+    height: 155px;
+    width: 45px;
+    background-color: #92D279;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-size: 30px;
+    left: 65px;
+}
+
+/* 品牌嚴選的茶葉裝飾 */
+.strict_tea_dec {
+    position: absolute;
+    left: 20px;
+    top: 37px;
+    height: 190px;
+    width: 115px;
+}
+
+/* 檢驗報告的範圍
+.reportContent {
+    padding-left: 300px;
+    display: flex;
+    gap: 150px;
+} */
+
+/* 各項檢驗報告字樣 */
+.foodText {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--light-green);
+    font-weight: bold;
+}
+
+/* 茶葉檢驗報告小圖 */
+.teaPicture {
+    background-image: url('../images/story/food_images/茶葉.jpg');
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    border-radius: 50px;
+    position: absolute;
+    left: 300px;
+}
+
+/* 固態食材檢驗報告小圖 */
+.solidPicture {
+    background-image: url('../images/story/food_images/固態食材.jfif');
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    border-radius: 50px;
+    position: absolute;
+    left: 600px;
+}
+
+/* 液態食材檢驗報告小圖 */
+.liquidPicture {
+    background-image: url('../images/story/food_images/液態食材.jfif');
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    border-radius: 50px;
+    position: absolute;
+    left: 900px;
+}
+
+/* 乳品及鮮果檢驗報告小圖 */
+.milkPicture {
+    background-image: url('../images/story/food_images/乳品及鮮果.jfif');
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    border-radius: 50px;
+    position: absolute;
+    top: 250px;
+    left: 300px;
+}
+
+/* 包材檢驗報告小圖 */
+.pickPicture {
+    background-image: url('../images/story/food_images/包材.jfif');
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    border-radius: 50px;
+    position: absolute;
+    top: 250px;
+    left: 600px;
+}
+
+/* 其他檢驗報告小圖 */
+.elsePicture {
+    background-image: url('../images/story/food_images/其他.jfif');
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    border-radius: 50px;
+    position: absolute;
+    top: 250px;
+    left: 900px;
+}
+
+
+
+/*  ---------品牌堅持 --------- */
+
+/* 品牌堅持的內容div */
+.PersistenceContent {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* 品牌堅持的標題小字 */
+.left_title_persistence {
+    position: absolute;
+    height: 155px;
+    width: 45px;
+    background-color: #92D279;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-size: 30px;
+    right: 60px;
+    top: 1130px;
+}
+
+/* 品牌堅持的茶葉裝飾 */
+.persistence_tea_dec {
+    position: absolute;
+    left: 1200px;
+    top: 1100px;
+    height: 190px;
+    width: 115px;
+}
+
+/* 品牌堅持小卡 */
+.persistenceCard {
+    width: 20%;
+    text-align: center;
+}
+
+/* 品牌堅持小卡的圖片 */
+.persistenceCard>img {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+/* 品牌堅持小卡的內容 */
+.persistenceTeaText,
+.persistencePersonText,
+.persistenceDrinkText {
+    padding: 20% 20% 0% 20%;
+}
+
+
+
+/* ---------茶葉檢驗報告--------- */
+
+
+/* 茶葉檢驗報告字樣 */
+.teaCheckText {
+    font-size: 36px;
+    color: var(--dark-green);
+    font-weight: bold;
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: center;
+    letter-spacing: 1em;
+    padding-top: 5%;
+}
+
+/* 各類茶葉字樣 */
+.teaCheckList {
+    text-align: center;
+    padding-top: 50px;
+    color: var(--dark-green);
+}
+
+/* 上面小圖範圍 */
+.teaArea1 {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+/* 下面小圖範圍 */
+.teaArea2 {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 45px;
+}
+
+/* 小圖 */
+.checkText img {
+    width: 200px;
+    height: 250px;
+    margin-top: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-style: solid;
+    border-color: var(--green);
+}
+
+/* 加上放大鏡icon */
+/* a:hover .tooltip-icon {
+    visibility: visible;
+}
+
+a .tooltip-icon {
+    visibility: hidden;
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    width: 200px;
+    height: 200px;
+    background-image: url("../images/story/放大鏡icon.png");
+    background-repeat: no-repeat;
+} */
+
+/* ---------品牌故事、食材嚴選的btn設定--------- */
+
+/* 品牌故事、食材嚴選btn */
+.about_us_button {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+.about_us_button :not(:first-child) {
+    margin-left: 20%;
+}
+
+/* 品牌故事、食材嚴選的Tabbtn */
+.StoryTwoBtnTab button {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+}
+
+.StoryTwoBtnTab button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+}
+
+.StoryTwoBtnTab button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.StoryTwoBtnTab button:hover::before {
+    width: 250%;
+}
+
+
+/* 關於我們的btn(查看更多) */
+
+.seeMoreBtn {
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
+.smallButton {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 9px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+}
+
+.smallButton:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+}
+
+.smallButton::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.smallButton:hover::before {
+    width: 250%;
+}

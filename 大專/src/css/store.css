@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+:root {
+    --dark-red: #cf121e;
+    --red: #ff3542;
+    --light-red: #ffe1e1;
+    --dark-green: #005743;
+    --green: #538e7a;
+    --light-green: #92d279;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #d9d9d9;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+.setHeight {
+    height: 100px;
+}
+@media screen and (max-width: 768px) {
+    .setHeight {
+        height: 20px;
+    }
+}
+
+
+/* 導覽列下方圖片，不確定要不要用 */
+.topSizeStore {
+    width: 100%;
+    height: 200px;
+    background-image: url('../images/store/store.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: static;
+    /* top: 100px; */
+}
+.topSizeStore>div {
+    padding-top: 120px;
+}
+.topSizeStore>div>h2 {
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 10px;
+    text-shadow: 0px 0px 5px #000000,0px 0px 5px #000000,0px 0px 5px #fff,0px 0px 5px #fff;
+}
+
+/* 行政區域 */
+.area {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+    .area {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* 按鈕點下去 */
+.tab button.active  {
+    width: 130px;
+    height: 50px;
+    border: 3px solid var(--dark-green);
+    color: var(--white);
+    background-color: var(--dark-green);
+    font-size: 1rem;
+    letter-spacing: 5px;
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.tab button {
+    /* font-size: 1rem; */
+    letter-spacing: 5px;
+    /* margin: 30px 10px; */
+    /* padding: 10px 30px; */
+    /* background-color: #ffe1e1; */
+    /* clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); */
+    /* border: 2px solid #005743; */
+    margin: 5px !important; 
+    width: 130px;
+    height: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--dark-green);
+
+    color: var(--black);
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.tab button:hover {
+    color: var(--dark-green);
+    transition-delay: .5s;
+    box-shadow: 2px 2px 3px rgba(146, 210, 121, 0.4);
+}
+.tab button :hover::before {
+    width: 100%;
+}
+.tab button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: var(--light-red);
+    transition: .4s ease;
+    z-index: -1;
+}
+.tab button:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    /* color: aliceblue; */
+}
+/* 先藏起來 */
+.countyTab {
+    /* display: none; */
+    text-align: center;
+    line-height: 4rem;
+    /* border: 1px solid rebeccapurple; */
+
+}
+
+
+/* 縣市 */
+.countyName {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: #005743;
+    transition: .5s;
+}
+
+.countyName:hover,
+.countyName.active {
+    cursor: pointer;
+    border-bottom: 4px double #ff3542;
+    border-top: 4px double #ff3542;
+    padding: 5px 15px;
+}
+
+
+
+
+/* 門市資訊 */
+.allStores {
+    margin: 20px;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.storeA {
+    display: flex;
+    justify-content: flex-start;
+    border: 3px solid #92d279;
+    border-radius: 20px 0 0 0;
+    width: 350px;
+    padding: 5px 10px;
+    margin: 10px 15px;
+    height: 130px;
+}
+/* .oneShop {
+    display: none;
+} */
+.icons {
+    /* border: 1px solid purple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* padding-top: 5px; */
+}
+/* .icons>i:nth-of-type(1) {
+    color: #005743;
+} */
+.icons>div:nth-child(2) {
+    color: #538e7a;
+}
+.icons>div:nth-child(3) {
+    color: #ff3542;
+}
+.storeInfo {
+    /* border: 1px solid purple; */
+    margin-left: 10px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.storeInfo>h4{
+    /* border: 1px solid skyblue; */
+    margin: 5px 0 0 0;
+}
+.storeInfo>p:first-of-type {
+    /* border: 1px solid skyblue; */
+    margin: 5px 0 0 0;
+}
+.storeInfo>p:last-of-type {
+    /* border: 1px solid skyblue; */
+    margin: 5px 0 0 0;
+}
+
+
+/* 頁數置中 */
+.pageCenter {
+    text-align: center;
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .arrow {
+    cursor: pointer;
+ }
+ .pageNum {
+    color: #005743;
+    font-weight: bold;
+    font-size: 16px;
+    /* border: 1px solid blue; */
+    margin: 0 10px;
+ }
+ .pageNum>span {
+    margin: 2px;
+    cursor: pointer;
+    padding: 5px;
+ }
+ .defaultPage {
+    border-bottom: 5px double #ff3542;
+    /* background-color: #92D279; */
+ }

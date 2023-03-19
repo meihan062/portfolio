@@ -1,0 +1,260 @@
+:root {
+    --dark-red: #cf121e;
+    --red: #ff3542;
+    --light-red: #ffe1e1;
+    --dark-green: #005743;
+    --green: #538e7a;
+    --light-green: #92d279;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #d9d9d9;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.BodyProduct {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+.ProductHistoryContent {
+    width: 1055px;
+    height: 1100px;
+    margin: 23px 0px 0px 100px;
+    background-color: #D9D9D9;
+    /* display: grid;
+    grid-template-columns: 365px  365px; */
+    /* border: 3px solid #000000; */
+}
+
+
+/* .information {
+    padding: 40px 60px;
+} */
+
+.ProductHistoryInfo {
+    /* margin: 45px 0px 0px 0px; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position: relative;
+    left: 30px;
+}
+
+
+.ProductHistoryImg {
+    width: 155px;
+    height: 155px;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+
+
+/* .product_info {
+    display: grid;
+    grid-template-columns: auto auto;
+} */
+
+.ProductHistoryTotalDiv {
+    width: 590px;
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+    left: 415px;
+    text-align: right;
+    /* left: 20px; */
+    /* top: 100px; */
+    /* border: 1px solid black; */
+}
+
+.ProductHistoryInfoP {
+    position: relative;
+    top: 65px;
+    font-size: 18px;
+}
+
+.ProductHistoryPriceP {
+    position: relative;
+    top: 95px;
+    left: -150px;
+    text-align: right;
+    font-size: 18px;
+    /* border: 1px solid black; */
+}
+
+/* .price>h4 {
+    position: relative;
+    left: 200px;
+    top: 30px;
+} */
+
+/* .total p {
+    width: 285px;
+    position: relative;
+    top: 7px;
+    right: 13px;
+    text-align: right;
+} */
+
+.separate4 {
+    width: 960px;
+    position: relative;
+    top: 70px;
+    border: 1px solid black;
+}
+
+.ProductHistoryTotalTitle {
+    position: relative;
+    top: -5px;
+    left: 190px;
+    /* border: 1px solid red; */
+}
+
+
+.Div1 {
+    position: relative;
+    top: 70px;
+}
+
+.Div2 {
+    position: relative;
+    top: 40px;
+}
+
+.Div3 {
+    position: relative;
+    top: 10px;
+}
+
+.ProductHistoryLegend {
+    font-weight: bold;
+}
+
+.ProductHistoryInformation {
+    width: 963px;
+    position: relative;
+    top: 10px;
+    left: 45px;
+}
+
+.ProductHistoryFielset {
+    width: 700px;
+    height: 630px;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: auto auto ;
+    /* background-color: lightblue; */
+}
+
+/* 訂單編號 */
+.ProductHistoryData1 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+    font-size: 20px;
+    /* border: 1px solid red; */
+    /* top: 15px; */
+}
+
+/* 訂單完成時間 */
+.ProductHistoryData2 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+    /* top: -115px; */
+    /* border: 1px solid blue; */
+}
+
+/* 訂購人姓名 */
+.ProductHistoryData3 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+    /* border: 1px solid blue; */
+}
+
+/* 訂購人電話 */
+.ProductHistoryData4 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 收購人姓名 */
+.ProductHistoryData5 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+}
+
+/* 收購人電話 */
+.ProductHistoryData6 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 運送方式 */
+.ProductHistoryData7 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+}
+
+/* 地址 */
+.ProductHistoryData8 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 付款方式 */
+.ProductHistoryData9 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+    /* top: -115px; */
+    /* border: 1px solid blue; */
+}
+
+/* 發票開立方式 */
+.ProductHistoryData10 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 備註 */
+.ProductHistoryData11 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+}
+
+.ProductHistoryH4 {
+    font-size: 20px;
+    color: var(--black);
+}
+
+.ProductHistoryP {
+    position: relative;
+    top: -20px;
+    font-size: 19px;
+}
+
+.ProductHistoryTitle {
+    margin: 25px auto 0px auto;
+}

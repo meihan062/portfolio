@@ -1,0 +1,629 @@
+:root {
+    --dark-red: #cf121e;
+    --red: #ff3542;
+    --light-red: #ffe1e1;
+    --dark-green: #005743;
+    --green: #538e7a;
+    --light-green: #92d279;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #d9d9d9;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.BodyProduct {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* product_list */
+/* banner */
+.ProductBanner {
+    height: 290px;
+    margin: 25px 0px;
+    vertical-align: middle;
+    width: 100%;
+    /* width: 1000px; */
+    /* border: 1px solid red; */
+}
+
+/* 產品分類 */
+.typ {
+    /* width: 1200px; */
+    position: relative;
+    /* top: -10px; */
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+/* hr */
+.separate1 {
+    /* margin: 10px 30px 0px 30px; */
+    /* width: 1150px; */
+    width: 90%;
+    vertical-align: middle;
+}
+
+/* 商品照 */
+.ProductListImg {
+    width: 225px;
+    height: 225px;
+    display: block;
+    margin: auto auto 20px auto;
+    /* border: 1px solid red; */
+}
+
+/* 商品位置設定 */
+.ProductList {
+    /* 上 右 下 左 */
+    margin: 15px 100px 0px 100px;
+    /* 1. 設定 display: grid，改變指定元素的顯示方式 */
+    display: grid;
+    /* 2. 設定 grid-template-columns 指定有多少欄 */
+    grid-template-columns: auto auto auto;
+    /* 3. 設定 grid-template-rows 設定列高 */
+    grid-template-rows: 300px;
+}
+
+.ProductListDiv {
+    margin: 5px;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+/* 商品名稱 */
+.ProductTitle {
+    font-size: 18px;
+    color: var(--black);
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 15px auto 0px auto;
+    /* background: none; */
+}
+
+.ProductListTitle {
+    color: var(--black);
+    font-size: 18px;
+}
+
+.ProductListTitle:hover {
+    color: var(--green);
+}
+
+/* 分類名稱 */
+.name {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.name:hover {
+    color: #538E7A;
+    /* font-size: 24px; */
+    border-bottom: 3px solid #1A574F;
+}
+
+/* .name1:visited {
+    background-color: #FFFFFF;
+    color: var(--light-red);
+} */
+
+
+/* .mySlides_banner {
+    width: 1000px;
+    display: none;
+    vertical-align: middle;
+    border: 1px solid blue;
+} */
+
+/* 整個banner */
+.ProductSlideshowContainer {
+    /* width: 100%; */
+    /* height: 290px; */
+    /* position: relative; */
+    /* margin: 1125px auto; */
+    margin: auto;
+    padding-top: 100px;
+    /* border: 1px solid red; */
+}
+
+/* Next & previous buttons */
+
+/* banner上下頁 */
+.ProductPrevBanner,
+.ProductNextBanner {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.ProductNextBanner {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.ProductPrevBanner:hover,
+.ProductNextBanner:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    /* background-color: #bbb; */
+    background-color: #92D279;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active_banner,
+.dot:hover {
+    /* background-color: #717171; */
+    background-color: #538E7A;
+}
+
+/* Fading animation */
+.Productfade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.dots {
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* RWD */
+@media (max-width: 768px) {
+
+    /* .ProductPrevBanner,
+    .ProductNextBanner {
+        font-size: 11px
+    } */
+    .ProductList {
+        margin: 15px 10px 0px 10px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 330px;
+    }
+
+    .ProductListImg {
+        width: 270px;
+        height: 270px;
+        display: block;
+        margin: auto auto 10px auto;
+        /* border: 1px solid red; */
+    }
+
+    .ProductListTitle {
+        color: var(--black);
+        font-size: 22px;
+    }
+
+    .name {
+        font-size: 22px;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+
+    /* .ProductPrevBanner,
+    .ProductNextBanner {
+        font-size: 11px
+    } */
+    .ProductList {
+        margin: 15px 25px 0px 25px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 315px;
+    }
+
+    .name {
+        text-align: 22px;
+    }
+
+    .ProductListImg {
+        width: 260px;
+        height: 260px;
+        display: block;
+        margin: auto auto 15px auto;
+    }
+}
+
+/* @media (min-width: 1200px) {
+
+    .ProductPrevBanner,
+    .ProductNextBanner {
+        font-size: 11px
+    }
+} */
+
+/* ----------------------------------------------- */
+
+/* product_intro */
+/* .ProductIntroImg {
+    width: 200px;
+    height: 200px;
+background-color: var(--light-red);
+} */
+
+.ProductIntroImgBig {
+    width: 420px;
+    height: 420px;
+
+    /* width: 350px;
+    height: 350px; */
+
+    position: relative;
+    top: 11%;
+    left: 11%;
+
+    /* top: 13%;
+    left: 8%; */
+    z-index: 1;
+}
+
+.BigImg {
+    width: 420px;
+    height: 420px;
+
+    /* width: 350px;
+    height: 350px; */
+
+    border-radius: 2em;
+}
+
+.ProductIntroContent {
+    width: 630px;
+    height: 460px;
+
+    /* width: 600px;
+    height: 430px; */
+    background-color: var(--green);
+    position: relative;
+    top: 7%;
+    right: 5%;
+
+    /* right: 7%; */
+
+    margin-bottom: 15%;
+    /* left: 480px; */
+    border-radius: 3em;
+    /* border: 1px solid blue; */
+}
+
+.ProductIntroImgSmall {
+    width: 90px;
+    height: 400px;
+    position: relative;
+    /* left: 50%;
+    top: 18%; */
+
+    left: 25%;
+    top: 18%;
+
+    /* 1. 設定 display: grid，改變指定元素的顯示方式 */
+    /* display: grid; */
+    display: block;
+    /* 2. 設定 grid-template-columns 指定有多少欄 */
+    /* grid-template-columns: auto; */
+    /* 3. 設定 grid-template-rows 設定列高 */
+    /* grid-template-rows: 50px; */
+    /* z-index: 99; */
+}
+
+.SmallImg {
+    width: 90px;
+    height: 90px;
+
+    /* width: 70px;
+    height: 70px; */
+
+    /* display: block; */
+    margin: 18px 0px 0px 0px;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+/* 商品名稱 */
+.ProductIntroTitle {
+    text-align: center;
+    font-size: 32px;
+    /* padding: 20px 0px 0px 0px; */
+    /* text-overflow: clip; */
+    /* border: 1px solid black; */
+}
+
+/* 商品介紹 */
+.ProductIntro {
+    width: 530px;
+    /* margin: 0px 0px 0px 80px; */
+    position: relative;
+    left: 10%;
+    color: #D9D9D9;
+}
+
+/* hr */
+.separate2 {
+    width: 85%;
+    color: #ffffff;
+    position: relative;
+    left: 2%;
+}
+
+.ProductIntroPrice {
+    position: relative;
+    left: 10%;
+    font-size: 24px;
+}
+
+/* 款式及數量選擇區 */
+.choose {
+    /* margin: 10px 0px 0px 0px; */
+    position: relative;
+    right: 4%;
+    bottom: 10px;
+
+    display: flex;
+    /* 垂直置中 */
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.TypeSelect {
+    height: 30px;
+    width: 95px;
+    margin: 0px 100px 0px 90px;
+    border: 2px solid #92d279;
+    border-radius: 99em;
+}
+
+.TypeSelect:focus {
+    outline: none;
+    border: 3px solid var(--dark-red);
+}
+
+
+
+.ProductIntroPlus,
+.ProductIntroMinus {
+    width: 45px;
+    background-color: var(--white);
+    text-align: center;
+    border: 2px solid var(--light-green);
+    margin: 8px;
+    border-radius: 99em;
+    position: relative;
+    right: 8%;
+
+    /* right: 13%; */
+}
+
+.ProductIntroPlus:hover,
+.ProductIntroMinus:hover {
+    background: var(--light-red);
+}
+
+.ProductIntroText {
+    width: 50px;
+    height: 23px;
+    text-align: center;
+    position: relative;
+    right: 8%;
+
+    /* right: 13%; */
+
+    border: 2px solid var(--light-green);
+    border-radius: 99em;
+    /* border: 3px solid var(--dark-red); */
+}
+
+.ProductIntroText:focus {
+    /* outline: var(--dark-red); */
+    outline: none;
+    border: 3px solid var(--dark-red);
+}
+
+.CartBtn {
+    right: 2%;
+
+    /* right: 7%; */
+
+    width: 130px;
+    margin: -5px 5px 0px 5px;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+}
+
+.CartBtn:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+}
+
+.CartBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.CartBtn:hover::before {
+    width: 250%;
+}
+
+
+.ProductIntroSlideshowContainer {
+    display: grid;
+    /* 2. 設定 grid-template-columns 指定有多少欄 */
+    /* grid-template-columns: 50px 200px 300px; */
+    grid-template-columns: auto auto auto;
+    /* 3. 設定 grid-template-rows 設定列高 */
+    /* grid-template-rows: 90px; */
+
+}
+
+/* Next & previous buttons */
+.ProductIntroPrev,
+.ProductIntroNext {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.ProductIntroNext {
+    z-index: 1;
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+    /* border: 1px solid red; */
+}
+
+.ProductIntroPrev {
+    /* z-index: 1; */
+    left: 0px;
+    border-radius: 3px 0 0 3px;
+    /* border: 1px solid blue; */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.ProductIntroPrev:hover,
+.ProductIntroNext:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+/* .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+} */
+
+/* The dots/bullets/indicators */
+/* .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    background-color: #92D279;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+} */
+
+/* .active {
+    background-color: #717171;
+    background-color: #538E7A;
+} */
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* RWD */
+@media (max-width: 768px) {
+
+    /* .ProductPrevBanner,
+    .ProductNextBanner {
+        font-size: 11px
+    } */
+
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+
+    /* .ProductPrevBanner,
+    .ProductNextBanner {
+        font-size: 11px
+    } */
+
+}
+
+/* @media (min-width: 1200px) {
+
+    .ProductPrevBanner,
+    .ProductNextBanner {
+        font-size: 11px
+    }
+} */

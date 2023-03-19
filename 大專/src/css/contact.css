@@ -1,0 +1,586 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+:root {
+    --dark-red: #cf121e;
+    --red: #ff3542;
+    --light-red: #ffe1e1;
+    --dark-green: #005743;
+    --green: #538e7a;
+    --light-green: #92d279;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #d9d9d9;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+
+.setHeight {
+    height: 100px;
+}
+@media screen and (max-width: 768px) {
+    .setHeight {
+        height: 20px;
+    }
+}
+
+/* 導覽列下方圖片，不確定要不要用 */
+.topSize {
+    width: 100%;
+    height: 200px;
+    background-image: url('../images/contact/contact.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: static;
+    /* top: 100px; */
+}
+.topSize>div {
+    padding-top: 120px;
+}
+.topSize>div>h2 {
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 10px;
+    text-shadow: 0px 0px 5px #000000,0px 0px 5px #000000,0px 0px 5px #fff,0px 0px 5px #fff;
+}
+
+/* 兩個按鈕 */
+.twoBtns {
+    text-align: center;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* 按鈕點下去 */
+.tab button.active {
+    width: 160px;
+    height: 50px;
+    border: 3px solid var(--dark-green);
+    color: var(--white);
+    background-color: var(--dark-green);
+    font-size: 1rem;
+    letter-spacing: 5px;
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+/* 不要有hover效果 */
+/* .itemSelecct1:hover {
+    color: var(--dark-green);
+} */
+/* .itemSelecct1:hover::before {
+    transform: translateY(0);
+} */
+/* .itemSelecct1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-red);
+    transform: translateY(-100%);
+    transition: all .3s;
+    z-index: -1;
+} */
+
+/* 按鈕原本的樣子 */
+.tab button {
+    margin: 0 5px;
+    width: 160px;
+    height: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--dark-green);
+
+    color: var(--black);
+    background-color: transparent;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.tab button:hover {
+    color: var(--dark-green);
+    transition-delay: .5s;
+    box-shadow: 2px 2px 3px rgba(146, 210, 121, 0.4);
+    cursor: pointer;
+}
+
+.tab button:hover::before {
+    width: 100%;
+}
+
+.tab button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: var(--light-red);
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.tab button:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    /* color: aliceblue; */
+}
+/* 先藏起來    js還沒 先打開 */
+/* .tabcontent {
+    display: none;
+} */
+
+/* 注意事項 */
+.notice {
+    text-align: center;
+}
+
+/* 表單 */
+
+.formFlex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.formLeft {
+    /* margin-right: 20px; */
+    width: 450px;
+}
+
+.formRight {
+    /* margin-left: 20px; */
+    width: 450px;
+
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid skyblue; */
+    padding: 15px 0;
+}
+
+.parallelogram {
+    text-align: center;
+    /* 中間擴散 */
+    /* background: -webkit-radial-gradient(rgb(246, 247, 248), rgb(146, 210, 121));
+    background: radial-gradient(rgb(246, 247, 248), rgb(146, 210, 121)); */
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#edf9f2+0,92d279+0,92d279+0,ffffff+49,ffe1e1+100 */
+    background: rgb(237, 249, 242);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(237, 249, 242, 1) 0%, rgba(146, 210, 121, 1) 0%, rgba(146, 210, 121, 1) 0%, rgba(255, 255, 255, 1) 49%, rgba(255, 225, 225, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(237, 249, 242, 1) 0%, rgba(146, 210, 121, 1) 0%, rgba(146, 210, 121, 1) 0%, rgba(255, 255, 255, 1) 49%, rgba(255, 225, 225, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(237, 249, 242, 1) 0%, rgba(146, 210, 121, 1) 0%, rgba(146, 210, 121, 1) 0%, rgba(255, 255, 255, 1) 49%, rgba(255, 225, 225, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#edf9f2', endColorstr='#ffe1e1', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+
+    width: 100px;
+    height: fit-content;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    padding: 5px 30px;
+    margin-right: 10px;
+    letter-spacing: 5px;
+    font-weight: bold;
+
+    font-size: 15px;
+    color: #000000;
+    box-sizing: content-box;
+}
+
+/* input[type=text]
+input[type=tel]
+input[type=email] */
+
+.nameText,
+.telText, 
+.emailText,
+.subText {
+    width: 200px;
+    border: 3px solid transparent;
+    border-bottom-color: #ffe1e1;
+    border-radius: 5px 5px 0 0;
+    padding: 2px 5px;
+    outline: none;
+    /* border-style: solid;
+    border-width: 0 0 3px 0;
+    border-color: #005743; */
+    background-color: transparent;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    height: 20px;
+    margin: 0;
+}
+
+.nameText:hover,
+.nameText:focus,
+.telText:hover,
+.telText:focus,
+.emailText:hover,
+.emailText:focus,
+.subText:hover, 
+.subText:focus {
+    /* background: linear-gradient(to right, #ffe1e1,  #ffffff, #92d279); */
+    outline: none;
+    border-color: #005743;
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
+
+    height: 20px;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+.msg {
+    width: 200px;
+    resize: none;
+    border: 3px solid #ffe1e1;
+    outline: none;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.msg:hover {
+    border-color: #005743;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input[type=file] {
+    padding: 5px;
+}
+
+.upload_cover {
+    position: relative;
+    width: 200px;
+    /* height: 100px; */
+    text-align: center;
+    cursor: pointer;
+    /* background: #efefef; */
+    /* border: 1px solid #595656; */
+    margin-left: 16px;
+}
+
+#file-uploader {
+    display: none;
+}
+
+.upload_icon {
+    color: #538e7a;
+    font-size: 18px;
+    position: absolute;
+    left: 0px;
+    top: 20%;
+}
+
+/* 用來顯示上傳的檔名 */
+#filenames {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-flex;
+}
+#fileName {
+    padding: 0px 0;
+    margin-left: 220px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    /* border: 1px solid red; */
+    color: #000000;
+}
+.deleteFile {
+    font-size: 10px;
+    color: #000000;
+    background-color: transparent;
+    border: 2px solid #538E7A;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.deleteFile:hover {
+    color: #cf121e;
+    border-color: #cf121e;
+}
+
+/* 送出按鈕 */
+.submitBtn,
+.submitBtn:focus {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+    margin: 30px 0;
+
+    height: fit-content;
+    width: auto;
+}
+
+.submitBtn:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+    background-color: #005743;
+    /* before的bg出不來 故設定在此 */
+    cursor: pointer;
+}
+
+.submitBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.submitBtn:hover::before {
+    width: 250%;
+}
+
+/* 加盟說明會資訊 */
+.intro {
+    box-sizing: border-box;
+    width: 700px;
+    margin: 30px auto;
+    margin-top: 40px;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    border: 3px solid #ffe1e1 ;
+    border-radius: 5em / 2em;
+    box-shadow: 0px 0px 8px rgba(255, 53, 66, 0.3);
+}
+.franchise {
+    box-sizing: border-box;
+    text-align: center;
+    width: 700px;
+    margin: 20px auto;
+    padding: 5px;
+    /* border: 1px red solid; */
+    background-color: #92d279;
+    /* background-image: linear-gradient(20deg, #92d279 0%, #ffe1e1 80%); */
+    border-radius: 2em 1em 4em / 0.5em 3em;
+
+}
+
+.franchiseFlex {
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px red solid; */
+    margin: 30px auto;
+}
+.franchiseFlex>div>h2 {
+    margin-top: 5px;
+}
+.franchiseFlex>div>h3 {
+    text-align: left;
+}
+
+.franchiseFlex>div>img {
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.franchiseFlex+div>h4 {
+    text-align: left;
+    margin-left: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        width: 90%;
+    }
+    .intro>h3 {
+        margin: 5px auto;
+    }
+
+    .franchise {
+        /* width: 500px; */
+        width: 90%;
+    }
+
+    .franchiseFlex {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .franchiseFlex+div>h4 {
+        text-align: left;
+        /* margin-left: 60px; */
+        margin-left: 10%;
+    }
+}
+
+
+
+/* 加盟地區 */
+.franchiseArea {
+    box-sizing: border-box;
+    width: 700px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px red solid; */
+
+}
+
+.franchiseArea>div>h2 {
+    margin-left: 50px;
+    padding: 10px 50px;
+    background-color: #ffe1e1;
+    border-radius: 2em / 5em;
+}
+
+.franchiseArea>div>div>h3 {
+    padding: 10px 20px;
+    border: 3px solid #538e7a;
+    border-radius: 10px;
+    margin-right: 50px;
+}
+
+.diams {
+    margin-top: 30px;
+    color: #cf121e;
+}
+
+.diams>div:nth-child(2) {
+    margin-top: 75px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .franchiseArea {
+        width: 500px;
+        flex-wrap: wrap;
+        /* border: 1px solid purple; */
+    }
+    .franchiseArea::after {
+        clear: both;
+    }
+    .franchiseArea>div:nth-child(1) {
+        width: 100%;
+        /* border: 1px solid skyblue; */
+        text-align: center;
+    }
+
+    .franchiseArea>div>h2 {
+        width: 150px;
+        margin:10px auto;
+        text-align: center;
+    }
+
+    .diams {
+        /* border: 1px solid skyblue; */
+        float: left;
+        margin-left: 50px;
+    }
+    .areaInfo {
+        /* border: 1px solid skyblue; */
+        float: right;
+        margin-right: 40px;
+    }
+}
+
+/* 加盟條件 */
+.franchiseTerm {
+    box-sizing: border-box;
+    text-align: center;
+    width: 700px;
+    margin: 20px auto;
+    padding: 5px;
+    /* border: 1px red solid; */
+    background-color: #005743;
+    /* background-image: linear-gradient(135deg, #92d279 0%, #ffe1e1 49%, #f7797d 95%); */
+    border-radius: 1em 4em 1em 2em/ 3em 0.5em;
+}
+
+.termColor {
+    color: #ffffff;
+}
+
+.franchiseTerm>div {
+    width: 600px;
+    margin: 10px auto;
+}
+
+.franchiseTerm>div>h2 {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    /* border: 1px red solid; */
+}
+
+.franchiseTerm>ul {
+    width: 600px;
+    margin: 10px auto;
+    text-align: left;
+}
+
+.franchiseTerm>ul>li {
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .franchiseTerm {
+        /* width: 500px; */
+        width: 90%;
+    }
+    .franchiseTerm>div {
+        /* width: 400px; */
+        width: 90%;
+    }
+    .franchiseTerm>ul {
+        /* width: 400px; */
+        width: 90%;
+    }
+}
+

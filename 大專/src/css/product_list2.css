@@ -1,0 +1,883 @@
+:root {
+    --dark-red: #cf121e;
+    --red: #ff3542;
+    --light-red: #ffe1e1;
+    --dark-green: #005743;
+    --green: #538e7a;
+    --light-green: #92d279;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #d9d9d9;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.BodyProduct {
+    margin: 0;
+    padding: 0;
+}
+
+.Step {
+    height: 90px;
+    width: 900px;
+    margin: 10px 0px 0px 170px;
+
+    /* margin: 10px 0px 0px 70px; */
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.Step1 {
+    width: 45px;
+    height: 45px;
+    color: #000000;
+    text-align: center;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+}
+
+.Step2 {
+    width: 45px;
+    height: 45px;
+    color: #000000;
+    text-align: center;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+}
+
+.Step3 {
+    width: 45px;
+    height: 45px;
+    color: #000000;
+    text-align: center;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+}
+
+.StepName {
+    margin: 5px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.StepDivHr {
+    margin: 40px 0px 0px 35px;
+    width: 210px;
+    border: 1px solid #D9D9D9;
+}
+
+.StepP {
+    padding: 15% 0px;
+    text-align: center;
+    font-size: 22px;
+}
+
+/* 當前和之前步驟的顏色 */
+.StepColor {
+    background-color: var(--dark-red);
+}
+
+.StepNameColor {
+    color: var(--dark-red);
+}
+
+.StepColor2 {
+    background-color: var(--light-red);
+}
+
+.StepNameColor2 {
+    color: var(--black);
+}
+
+
+/* cart */
+.ProductCartContent {
+    margin: 20px 0px 0px 100px;
+}
+
+.ProductCartProduct {
+    width: 1055px;
+    height: 170px;
+
+    /* width: 900px;
+    height: 150px; */
+    /* position: relative; */
+    /* right: 3%; */
+
+    background-color: #538E7A;
+    box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.7);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+
+
+.ProductCartImg {
+    width: 125px;
+    height: 125px;
+    margin: 19px 0px 0px 40px;
+}
+
+/* 款式 */
+.ProductCartP {
+    width: 235px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: var(--gray);
+}
+
+/* .product_2>p {
+    border: 1px solid blue;
+    padding: 50px 0px;
+    margin: 0px 0px 1000px 0px;
+} */
+
+/* 數量修改 */
+.ProductCartNumChoose {
+    display: grid;
+    /* 2. 設定 grid-template-columns 指定有多少欄 */
+    grid-template-columns: auto auto auto;
+}
+
+/* 數量區 */
+.ProductCartNum {
+    margin: 13px auto;
+}
+
+/* 小計區 */
+.ProductCartMoney {
+    margin: 13px 0px 0px 50px;
+}
+
+/* 數量增減按鈕 */
+.ProductCartAdd,
+.ProductCartMinus {
+    width: 50px;
+    height: 20px;
+    border: 2px solid #92d279;
+    border-radius: 99em;
+    background-color: var(--white);
+    text-align: center;
+    margin: 20px 10px 0px 10px;
+}
+
+.ProductCartAdd:hover,
+.ProductCartMinus:hover {
+    background: var(--light-red);
+}
+
+/* 數量 */
+.ProductCartText {
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    margin: 17px 0px 0px 0px;
+    border: 2px solid var(--light-green);
+    border-radius: 99em;
+}
+
+.ProductCartText:focus {
+    /* outline: var(--dark-red); */
+    outline: none;
+    border: 3px solid var(--dark-red);
+}
+
+
+/* 數量和小計的標題 */
+.ProductCartNumTitle,
+.ProductCartMoneyTitle {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+}
+
+/* 小計 */
+.ProductCartMoneyP {
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+}
+
+.DeleteBtn {
+    background-color: var(--green);
+    border: none;
+    margin: 70px 10px 0px 80px;
+    width: 30px;
+    height: 30px;
+}
+
+.DeleteBtnSvg {
+    width: 26px;
+    height: 26px;
+}
+
+/* 訂單總計區 */
+.ProductCartPrice {
+    width: 340px;
+    height: 175px;
+    margin: 30px 0px 0px 815px;
+
+    /* margin: 30px 0px 0px 630px; */
+
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    /* box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.7); */
+}
+
+.ProductCartPriceDiv {
+    width: 280px;
+    /* display: block; */
+    margin: auto auto;
+    padding: 5px 0px 0px 0px;
+    /* border: 0px solid black; */
+    /* border: 1px solid red; */
+}
+
+/* 訂單總計標題 */
+.ProductCartPriceTitle {
+    margin: 20px 0px 0px 0px;
+    /* border: 1px solid lightblue; */
+}
+
+.ProductCartPriceP {
+    text-align: right;
+}
+
+.ProductCartPriceHr {
+    border: 1px solid #000000;
+}
+
+/* 繼續購物&下一步按鈕 */
+.ProductCartBtn {
+    display: grid;
+    /* 2. 設定 grid-template-columns 指定有多少欄 */
+    grid-template-columns: auto auto;
+}
+
+.ProductCartShopping,
+.ProductCartNext {
+    width: 130px;
+    margin: -5px 5px 0px 5px;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+}
+
+.ProductCartShopping:hover,
+.ProductCartNext:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+}
+
+.ProductCartShopping::before,
+.ProductCartNext::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.ProductCartShopping:hover::before,
+.ProductCartNext:hover::before {
+    width: 250%;
+}
+
+
+/* info */
+/* 表單+商品資訊+按鈕 */
+.ProductInfoContent {
+    width: 1055px;
+    /* height: 800px; */
+    height: 100%;
+    margin: -5px 0px 0px 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/* 表單 */
+.ProductInfoInformation {
+    /* padding: 30px 50px; */
+    padding: 35px 20px 0px 50px;
+    /* border: 1px solid red; */
+    /* box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.7); */
+
+    /* position: relative; */
+    /* right: 20%; */
+}
+
+/* 商品資訊 */
+.ProductInfoProduct {
+    width: 390px;
+    height: 370px;
+    /* padding: 20px 20px; */
+    margin: 45px 0px 0px 0px;
+    background-color: #538E7A;
+    position: relative;
+    /* right: 60px; */
+    left: 8%;
+    /* border: 1px solid red; */
+    box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.7);
+
+    /* position: relative; */
+    /* right: 13%; */
+}
+
+.ProductInfoInput {
+    width: 370px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+    left: 25px;
+
+    /* left: 2%; */
+    /* right: inherit; */
+
+    border: 2px solid var(--light-green);
+    border-radius: 99em;
+    background-color: var(--white);
+}
+
+.ProductInfoInput:focus {
+    outline: none;
+    border: 3px solid var(--dark-red);
+}
+
+.ProductInfoInputTitle {
+    font-size: 18px;
+    position: relative;
+    left: 25px;
+
+    /* left: 2%; */
+}
+
+.card {
+    width: 320px;
+    position: relative;
+    left: 21%;
+}
+
+.CardCvv,
+.CardDate {
+    width: 180px;
+    position: relative;
+    left: 21%;
+    display: inline-block;
+    /* text-align: center;
+    font-size: 16px; */
+}
+
+.invoice {
+    width: 290px;
+    position: relative;
+    left: 29%;
+}
+
+.ProductInfoSelect {
+    /* width: 378px; */
+    width: 170px;
+    height: 35px;
+    font-size: 16px;
+    position: relative;
+    left: 30px;
+    border: 2px solid #92d279;
+    border-radius: 99em;
+}
+
+.ProductInfoSelect:focus {
+    outline: none;
+    border: 3px solid var(--dark-red);
+}
+
+.ProductInfoShopSelect {
+    width: 340px;
+    height: 35px;
+    position: relative;
+    left: 21%;
+}
+
+.ProductInfoComment {
+    width: 370px;
+    height: 100px;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    left: 55px;
+    margin-bottom: 10px;
+}
+
+.ProductInfoImg {
+    width: 125px;
+    height: 125px;
+    position: relative;
+    left: 30px;
+    top: 25px;
+}
+
+/* 按鈕(繼續購物/下一步) */
+.ProductInfoNext,
+.ProductInfoShopping {
+    /* height: 30px; */
+    /* width: 100px; */
+    /* color: #D9D9D9; */
+    /* background-color: #1A574F; */
+    margin: 0px 0px 0px 30px;
+    float: right;
+    /* border: 0px solid black; */
+
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+}
+
+.ProductInfoNext:hover,
+.ProductInfoShopping:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+}
+
+.ProductInfoNext::before,
+.ProductInfoShopping::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.ProductInfoNext:hover::before,
+.ProductInfoShopping:hover::before {
+    width: 250%;
+}
+
+
+/* 商品和資料 */
+.ProductInfo {
+    display: grid;
+    /* 2. 設定 grid-template-columns 指定有多少欄 */
+    grid-template-columns: auto auto;
+}
+
+/* 總計區 */
+.ProductInfoTotalDiv {
+    display: grid;
+    /* 2. 設定 grid-template-columns 指定有多少欄 */
+    grid-template-columns: auto auto;
+    position: relative;
+    left: 20px;
+    top: -10px;
+}
+
+/* 按鈕區域 */
+.ProductInfoBtn {
+    /* vertical-align: middle; */
+    height: 70px;
+    position: relative;
+    left: 45%;
+    top: 30%;
+
+    /* left: 70px; */
+    /* border: 1px solid blue; */
+}
+
+.ProductInfoP {
+    position: relative;
+    left: 0px;
+    top: 45px;
+    color: #FFFFFF;
+}
+
+.ProductInfoPriceP {
+    position: relative;
+    bottom: 10px;
+    right: 27px;
+    text-align: right;
+    /* border: 1px solid black; */
+}
+
+.ProductInfoPriceTitle {
+    width: 100px;
+    position: relative;
+    left: 200px;
+    top: 33px;
+    /* bottom: 10px; */
+    /* border: 1px solid black; */
+}
+
+.ProductInfoTotalP {
+    width: 285px;
+    position: relative;
+    top: 7px;
+    right: 13px;
+    text-align: right;
+    /* border: 1px solid black; */
+}
+
+.separate3 {
+    width: 350px;
+    border: 1px solid black;
+}
+
+.ProductInfoTotalTitle1 {
+    position: relative;
+    left: 210px;
+}
+
+.ProductInfoTotalTitle2 {
+    position: relative;
+    left: 210px;
+    top: -30px;
+    /* border: 1px solid black; */
+}
+
+.ProductInfoTotalTitle3 {
+    position: relative;
+    left: 210px;
+    top: -60px;
+    /* border: 1px solid black; */
+}
+
+
+.ProductInfoTotalP1 {
+    position: relative;
+    top: 5px;
+    left: 100px;
+}
+
+.ProductInfoTotalP2 {
+    position: relative;
+    top: -25px;
+    left: 100px;
+    /* border: 3px solid red; */
+}
+
+.ProductInfoTotalP3 {
+    position: relative;
+    top: -55px;
+    left: 100px;
+}
+
+.ProductInfoLegend {
+    font-weight: bold;
+}
+
+.ProductInfoFieldset {
+    border: 2px dashed #D9D9D9;
+
+    /* width: 85%; */
+}
+
+
+/* check */
+.ProductCheckContent {
+    width: 1055px;
+    height: 1100px;
+    margin: 23px 0px 0px 100px;
+
+    /* width: 900px; */
+    /* margin: 23px 0px 0px 70px; */
+
+    /* display: grid;
+    grid-template-columns: 365px  365px; */
+    /* border: 1px solid red; */
+    background-color: #D9D9D9;
+
+}
+
+.ProductCheckInfo {
+    /* margin: 45px 0px 0px 0px; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position: relative;
+    left: 30px;
+}
+
+.ProductCheckImg {
+    width: 155px;
+    height: 155px;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+
+.ProductCheckTotalDiv {
+    width: 590px;
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+    left: 39%;
+
+    /* left: 270px; */
+    text-align: right;
+    /* border: 1px solid black; */
+}
+
+.FormDeleteBtn {
+    margin: 29px 0px 20px 0px;
+    /* position: relative; */
+    /* top: 29px; */
+    /* bottom: 20px; */
+
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+}
+
+.FormDeleteBtn:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+}
+
+.FormDeleteBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.FormDeleteBtn:hover::before {
+    width: 250%;
+}
+
+/* 款式和數量 */
+.ProductCheckInfoP {
+    position: relative;
+    top: 65px;
+    font-size: 18px;
+    /* border: 1px solid red; */
+}
+
+.ProductCheckPriceP {
+    position: relative;
+    top: 95px;
+    left: -150px;
+    text-align: right;
+    font-size: 18px;
+    /* border: 1px solid black; */
+}
+
+.separate4 {
+    /* width: 960px; */
+
+    /* width: ; */
+    max-width: 90%;
+    position: relative;
+    top: 70px;
+    border: 1px solid black;
+}
+
+.ProductCheckTotalTitle {
+    position: relative;
+    top: -5px;
+    left: 190px;
+
+    /* left: 80px; */
+    /* border: 1px solid red; */
+}
+
+
+.ProductCheckTotal1 {
+    position: relative;
+    top: 70px;
+
+    /* right: 50px; */
+}
+
+.ProductCheckTotal2 {
+    position: relative;
+    top: 40px;
+}
+
+.ProductCheckTotal3 {
+    position: relative;
+    top: 10px;
+}
+
+.ProductCheckLegend {
+    font-weight: bold;
+}
+
+.ProductCheckInformation {
+    width: 963px;
+    position: relative;
+    top: 10px;
+    /* left: 45px; */
+    left: 4%;
+
+    /* right: 3%; */
+}
+
+.ProductCheckFieldset {
+    width: 700px;
+    height: 640px;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/* 訂單編號 */
+.ProductCheckData1 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+    font-size: 20px;
+    /* border: 1px solid red; */
+    /* top: 15px; */
+}
+
+/* 訂單完成時間 */
+.ProductCheckData2 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+    /* top: -115px; */
+    /* border: 1px solid blue; */
+}
+
+/* 訂購人姓名 */
+.ProductCheckData3 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+    /* border: 1px solid blue; */
+}
+
+/* 訂購人電話 */
+.ProductCheckData4 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 收購人姓名 */
+.ProductCheckData5 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+}
+
+/* 收購人電話 */
+.ProductCheckData6 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 運送方式 */
+.ProductCheckData7 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+}
+
+/* 地址 */
+.ProductCheckData8 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 付款方式 */
+.ProductCheckData9 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+    /* top: -115px; */
+    /* border: 1px solid blue; */
+}
+
+/* 發票開立方式 */
+.ProductCheckData10 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20%;
+}
+
+/* 備註 */
+.ProductCheckData11 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+}
+
+.ProductCheckH4 {
+    font-size: 20px;
+    color: var(--black);
+}
+
+.ProductCheckP {
+    position: relative;
+    top: -20px;
+    font-size: 19px;
+}
+

@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+:root {
+    --dark-red: #cf121e;
+    --red: #ff3542;
+    --light-red: #ffe1e1;
+    --dark-green: #005743;
+    --green: #538e7a;
+    --light-green: #92d279;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #d9d9d9;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+.setHeight {
+   height: 100px;
+}
+@media screen and (max-width: 768px) {
+   .setHeight {
+       height: 20px;
+   }
+}
+
+
+/* 導覽列下方圖片，不確定要不要用 */
+.topSizeNews {
+    width: 100%;
+    height: 200px;
+    background-image: url('../images/news/latest_news.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: static;
+    /* top: 100px; */
+}
+.topSizeNews>div {
+   padding-top: 120px;
+}
+.topSizeNews>div>h2 {
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 10px;
+    text-shadow: 0px 0px 5px #000000,0px 0px 5px #000000,0px 0px 5px #fff,0px 0px 5px #fff;
+}
+
+
+
+
+/* 兩個類別按鈕 */
+.twoBtn {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+ }
+ /* 當前的按鈕 */
+ .newsSelecct.active {   
+    width: 160px;
+    height: 50px;
+    border: 3px solid var(--dark-green);
+    color: var(--white);
+    background-color: var(--dark-green);
+    font-size: 1rem;
+    letter-spacing: 5px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+ }
+ .newsSelecct{
+    width: 160px;
+    height: 50px;
+    border-bottom-style: solid;
+    border-width: 0 0 3px 0;
+    border-color: var(--dark-green);
+ 
+    color: var(--black);
+    background-color: transparent;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    cursor: pointer;
+    position: relative;
+    margin: auto 10px;
+ }
+ .newsSelecct:hover {
+    color: var(--dark-green);
+    transition-delay: .5s;
+ }
+ .newsSelecct:hover::before {
+    width: 100%;
+  }
+ .newsSelecct::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: var(--light-red);
+    transition: .4s ease;
+    z-index: -1;
+ }
+ .newsSelecct:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    /* color: aliceblue; */
+  }
+ 
+ 
+ /* 先藏起來  先不藏確認圖片都有*/
+ /* .tabcontent {
+    display: none;
+ } */
+ 
+ 
+ 
+ /* 最新活動 的卡片們 */
+ .allCards {
+    padding: 10px 5%;
+    /* border: 1px solid purple; */
+    text-align: center;
+ }
+ /* 一張卡片 */
+ .card {
+    box-sizing: border-box;
+    border: 2px solid var(--light-green);
+    /* border-radius: 20px; */
+    width:500px;
+    height: 210px;
+    padding: 5px 10px;
+    margin: 10px 5px;
+    display: inline-block;
+ }
+ /* @media screen and (max-width: 768px){
+    .card {
+       display: block;
+    }
+ } */
+ .flexBox {
+    display: flex;
+    /* border: 1px solid darkorange; */
+ }
+ 
+ /* 圖片 */
+ .imgBoxxx {
+    /* margin: 10px auto; */
+    /* border: 1px solid red; */
+    /* padding: auto 0; */
+    background-color: var(--light-red);
+    width: 220px;
+    height: 155px;
+    margin-top: 22px;
+    border-radius: 10px;
+ }
+ .imgSize {
+    width: 210px;
+    height: 140px;
+    display: block;
+    margin: 8px auto;
+    /* border: 1px solid blue; */
+ }
+ 
+ .cardImg {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid purple; */
+    mask-image: radial-gradient(circle at 10px, transparent 10px, red 10.5px),
+                       radial-gradient(circle at 50% 10px, red 10px, transparent 10.5px);
+    mask-position: -10px, 50% -10px;
+    mask-size: 100% 35px, 35px 100%;
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    background-color: var(--dark-green);
+ 
+    object-fit: cover;
+    object-position: center center;
+ }
+ 
+ /* 右邊文字 */
+ .rightSide {
+    margin: 0 0 0 auto;
+    /* border: 1px solid purple; */
+ }
+ .info {
+    height: 155px;
+    width: 240px;
+    text-align: center;
+    /* border: 1px solid purple; */
+    padding: 0;
+ }
+ /* 日期大小 */
+ .dateFontSize {
+    font-size: 13px;
+    color: #000000;
+ }
+ /* 標題大小 */
+ .infoTitle {
+    color: #cf121e;
+    /* border: 1px solid red;  */
+    margin: 2px 0;
+    /* 單行文字省略 */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+    /* 多行文字省略 */
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+ }
+ /* 內文 */
+ .infoText {
+    /* border: 1px solid red;  */
+    margin-top: 15px;
+    font-size: 14px;
+    /* 多行文字省略 */
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+   
+ }
+ /* more按鈕 */
+ .atBtn {
+    text-align: center;
+    /* border: 1px solid red;  */
+    position: relative;
+    bottom: 0;
+ }
+ .moreBtn {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #005743;
+    transition: all 1000ms;
+    font-size: 10px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+    background-color: #ffffff;
+ }
+ .moreBtn:hover {
+    cursor: pointer;
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+ }
+ .moreBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+ }
+ .moreBtn:hover::before {
+    width: 250%;
+ }
+ 
+ 
+ /* 頁數置中 */
+ .pageCenter {
+    text-align: center;
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .arrow {
+    cursor: pointer;
+ }
+ .pageNum {
+    color: #005743;
+    font-weight: bold;
+    font-size: 16px;
+    /* border: 1px solid blue; */
+    margin: 0 10px;
+ }
+ .pageNum>span {
+    margin: 2px;
+    cursor: pointer;
+    padding: 5px;
+ }
+ .defaultPage {
+    border-bottom: 5px double #ff3542;
+    /* background-color: #92D279; */
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* 彈出視窗的部分 */
+ body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .modal {
+    position: absolute;	
+    left: 0;
+    top: 0;
+    z-index: 10;		  
+    width: 100%;
+    height: 320vh;
+    background: rgba(0, 0, 0, 0.7);			
+  }
+  
+  .dialog {		
+    position: absolute;
+    z-index: 11;
+    /* 將對話框水平置中。 */
+    left: 50%;	
+    transform: translate(-50%, 0%);			
+    top: 50%; /* 設定對話框的起始位置。 對話框滑動的距離與時間會影響淡入效果，可以自行嘗試調整。 */
+    /*opacity: 0;  將對話框設為透明。 */
+    width: 70%; /* 對話框寬度。 */
+    background: white;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.7),-2px -2px 8px 1px rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    line-height: 1.7em;
+  }
+  
+  .title {
+    text-align: center;
+    padding: 15px 8px;
+    font-size: 22px;
+    background: #005743;    		
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: white;
+    border: 1px solid #ffffff ;
+    box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 15%);
+  }
+  
+  .content {
+   padding: 0px 15px 10px 50px;
+   white-space: pre-wrap;
+   text-align: left;
+  }
+  
+  .buttons {
+    /* 加上這兩個CSS，可以讓button移動到對話框下方。 */
+    /* position: absolute;
+    right: 0px; */
+    text-align: center;
+    padding: 5px 10px;
+  }
+  
+  .okBtn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #005743;	
+    border-radius: 5px;
+    border: none;
+    padding: 0.5em 2em;
+    cursor: pointer;
+ 
+    font-weight: bold;
+    letter-spacing: 5px;	    
+    transition: all 1000ms;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #92D279;
+  }
+  .okBtn:hover {
+    cursor: pointer;
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #92D279;
+    box-shadow: 4px 5px 17px -4px #538E7A;
+ }
+ .okBtn::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 87, 67, 90%);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+ }
+ .okBtn:hover::before {
+    width: 250%;
+ }
+ 
+ .date {
+   text-align: left;
+   margin: 0 0 0 50px;
+ }
+ .picture {
+    width: 50% ;
+    display: block;
+    margin: 8px auto;
+    border-radius: 5px;
+ }
+ @media screen and (max-width: 768px) {
+    .picture{
+    width: 70% ;
+    }
+ }
